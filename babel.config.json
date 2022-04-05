@@ -1,4 +1,3 @@
 {
-  "presets": ["next/babel", "@babel/preset-typescript"],
-  "plugins": ["@ts-gql/babel-plugin"]
+  "presets": ["next/babel", "@babel/preset-typescript"]
 }

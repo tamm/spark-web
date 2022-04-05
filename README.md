@@ -1,2 +1,3 @@
-# spark-web
-Brighte Spark Design System
+# Brighte Spark Design System
+
+[WIP]
