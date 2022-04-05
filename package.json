@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "build": "preconstruct build",
-    "start": "yarn --cwd=spark-web/docs dev",
+    "start": "yarn --cwd=docs dev",
     "format": "prettier --check .",
     "format:check": "prettier --check .",
     "format:write": "prettier --write .",
@@ -42,5 +42,11 @@
       "packages/*",
       "spark-web/packages/*"
     ]
-  }
+  },
+  "prettier": {
+    "arrowParens": "avoid",
+    "proseWrap": "always",
+    "singleQuote": true,
+    "trailingComma": "es5"
+  }  
 }
