@@ -1,0 +1,116 @@
+---
+title: Checkbox
+storybookPath: forms-checkbox--default
+---
+
+Checkboxes are used to toggle between checked and unchecked states — usually in
+a form. If only one option from a list is allowed to be enable, consider using a
+`RadioButton` instead.
+
+## Examples
+
+### Controlled
+
+Checkboxes can be both controlled and uncontrolled. To control a checkbox
+provide the `checked` state with a value you control, as well as an `onChange`
+function to set the new value when the checkbox is toggled.
+
+```jsx live
+const [checked, setChecked] = React.useState(false);
+
+return (
+  <Stack gap="large">
+    <Checkbox
+      checked={checked}
+      onChange={event => setChecked(event.target.checked)}
+    >
+      <Text>{checked ? 'Hide' : 'Show'} message</Text>
+    </Checkbox>
+    {checked && <Text>Toggle the checkbox to hide this message</Text>}
+  </Stack>
+);
+```
+
+### Size
+
+Checkboxes are available in two sizes: `small` and `medium`.
+
+```jsx live
+<Stack gap="large">
+  <Checkbox size="small" checked={false}>
+    Unchecked
+  </Checkbox>
+  <Checkbox size="small" checked>
+    Checked
+  </Checkbox>
+  <Checkbox size="small" disabled>
+    Disabled
+  </Checkbox>
+  <Checkbox size="small" checked disabled>
+    Checked + disabled
+  </Checkbox>
+  <Divider />
+  <Checkbox size="medium" checked={false}>
+    Unchecked
+  </Checkbox>
+  <Checkbox size="medium" checked>
+    Checked
+  </Checkbox>
+  <Checkbox size="medium" disabled>
+    Disabled
+  </Checkbox>
+  <Checkbox size="medium" checked disabled>
+    Checked + disabled
+  </Checkbox>
+</Stack>
+```
+
+### Message and tone
+
+The `message` is used to communicate the status of a field, such as an error
+message. This will be announced on focus and can be combined with a `tone` to
+illustrate intent. The supported tones are: `critical`, `positive` and
+`neutral`.
+
+```jsx live
+<Stack gap="large">
+  <Checkbox message="Critical message" tone="critical">
+    Critical
+  </Checkbox>
+  <Checkbox message="Positive message" tone="positive">
+    Positive
+  </Checkbox>
+  <Checkbox message="Neutral message" tone="neutral">
+    Neutral
+  </Checkbox>
+</Stack>
+```
+
+## Props
+
+### Checkbox
+
+| Prop      | Type                                  | Default   | Description                                                       |
+| --------- | ------------------------------------- | --------- | ----------------------------------------------------------------- |
+| children  | React.ReactNode                       |           | The checkbox label content.                                       |
+| checked?  | boolean                               |           | When true, the checkbox will be checked.                          |
+| disabled? | boolean                               | false     | When true, the checkbox will be disabled.                         |
+| size?     | 'small' \| 'medium'                   | 'small'   | The size of the checkbox.                                         |
+| value?    | string                                |           | The value of the checkbox.                                        |
+| message?  | string                                |           | Provide a message, informing the user about changes in state.     |
+| tone?     | 'critical' \| 'positive' \| 'neutral' | 'neutral' | Provide a tone to influence elements of the field, and its input. |
+
+The `Checkbox` component also extends `InputHTMLAttributes` props and are not
+listed here.
+
+### CheckboxPrimitive
+
+| Prop      | Type                | Default | Description                               |
+| --------- | ------------------- | ------- | ----------------------------------------- |
+| checked?  | boolean             |         | When true, the checkbox will be checked.  |
+| disabled? | boolean             |         | When true, the checkbox will be disabled. |
+| size?     | 'small' \| 'medium' | 'small' | The size of the checkbox.                 |
+| value?    | string              |         | The value of the checkbox.                |
+
+The `CheckboxPrimitive` component also extends `InputHTMLAttributes` props and
+are not listed here.
