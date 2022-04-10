@@ -12,7 +12,9 @@
     "lint:fix": "yarn run lint --fix",
     "lint": "eslint . --ignore-path \"./.gitignore\"",
     "postinstall": "preconstruct dev && manypkg check",
-    "typecheck": "yarn postinstall && ultra -r tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "test:unit": "jest",
+    "test": "yarn run typecheck && yarn run test:unit"
   },
   "dependencies": {
     "@babel/core": "^7.16.5",
@@ -23,7 +25,9 @@
     "@manypkg/cli": "^0.19.1",
     "@preconstruct/cli": "^2.1.5",
     "@preconstruct/eslint-plugin-format-js-tag": "0.2.0",
+    "@testing-library/react": "^12.0.0",
     "@types/eslint": "8.4.1",
+    "@types/jest": "^27.4.1",
     "@typescript-eslint/eslint-plugin": "5.18.0",
     "@typescript-eslint/parser": "5.18.0",
     "eslint": "8.12.0",
@@ -34,11 +38,11 @@
     "eslint-plugin-react-hooks": "4.4.0",
     "eslint-plugin-simple-import-sort": "^7.0.0",
     "eslint-plugin-storybook": "^0.5.7",
+    "jest": "^27.5.1",
     "prettier": "2.3.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "typescript": "4.4.3",
-    "ultra-runner": "^3.10.5"
+    "typescript": "4.4.3"
   },
   "workspaces": [
     "packages/*",

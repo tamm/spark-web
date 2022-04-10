@@ -1,11 +1,9 @@
-import { Divider } from '@spark-web/divider';
 import { Field } from '@spark-web/field';
 import { InformationCircleIcon } from '@spark-web/icon';
 import { Inline } from '@spark-web/inline';
 import { Stack } from '@spark-web/stack';
 import { Text } from '@spark-web/text';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import React from 'react';
 
 import { Select, SelectProps } from './Select';
 
