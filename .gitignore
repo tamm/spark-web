@@ -43,3 +43,6 @@ dist
 docs/cache/navigations.json
 docs/public/playroom
 docs/public/storybook
+
+# Test coverage
+coverage
