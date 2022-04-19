@@ -7,7 +7,7 @@ import { Text } from '@spark-web/text';
 import { useTheme } from '@spark-web/theme';
 import type { DataAttributeMap } from '@spark-web/utils-spark';
 import { buildDataAttributes } from '@spark-web/utils-spark';
-import type { FC, ReactElement, ReactNode } from 'react';
+import type { ReactElement, ReactNode } from 'react';
 import { forwardRef, Fragment } from 'react';
 
 import { FieldContextProvider } from './context';
@@ -142,6 +142,7 @@ export const Field = forwardRef<HTMLDivElement, FieldProps>(
     );
   }
 );
+Field.displayName = 'Field';
 
 // Utils
 // ------------------------------
@@ -189,7 +190,7 @@ export const FieldMessage = ({ message, id, tone }: FieldMessageProps) => {
   );
 };
 
-const IndicatorContainer: FC = props => {
+function IndicatorContainer({ children, ...props }: { children: ReactNode }) {
   const { typography, utils } = useTheme();
   const { mobile, tablet } = typography.text.small;
   const responsiveStyles = utils.responsiveStyles({
@@ -206,6 +207,8 @@ const IndicatorContainer: FC = props => {
       flexShrink={0}
       className={css(responsiveStyles)}
       {...props}
-    />
+    >
+      {children}
+    </Box>
   );
-};
+}

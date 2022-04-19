@@ -60,13 +60,14 @@ export const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
     );
   }
 );
+TextInput.displayName = 'TextInput';
 
 // Styled components
 // ------------------------------
 
 export type UseInputProps = Pick<FieldContextType, 'disabled' | 'invalid'>;
 
-export function useInput({ disabled, invalid }: UseInputProps) {
+export function useInput({ disabled }: UseInputProps) {
   const theme = useTheme();
   const focusRingStyles = useFocusRing({ always: true });
   const textStyles = useText({

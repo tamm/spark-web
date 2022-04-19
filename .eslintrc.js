@@ -4,7 +4,8 @@ const ERROR = 2;
 
 const reactComponentTypeMessage = {
   message:
-    'This type includes the children prop which is generally wrong, instead of using this type, type the props of the component',
+    'This type includes the children prop which is generally wrong, ' +
+    'instead of using this type, type the props of the component',
 };
 
 /** @type {import('@types/eslint').Linter.BaseConfig} */
@@ -13,14 +14,16 @@ module.exports = {
   env: {
     browser: true,
     es6: true,
+    jest: true,
     node: true,
   },
-  extends: ['next', 'prettier'],
+  extends: ['next', 'plugin:jest/recommended', 'prettier'],
   plugins: [
-    'simple-import-sort',
-    'import',
-    '@typescript-eslint',
     '@preconstruct/format-js-tag',
+    '@typescript-eslint',
+    'import',
+    'jest',
+    'simple-import-sort',
   ],
   settings: {
     next: { rootDir: ['docs/', 'packages/*/'] },
@@ -34,6 +37,15 @@ module.exports = {
     'import/newline-after-import': ERROR,
     'import/no-duplicates': ERROR,
     'import/no-unresolved': ERROR,
+    'jest/valid-describe': OFF,
+    'jest/valid-expect': OFF,
+    'jest/no-conditional-expect': OFF,
+    'jest/no-standalone-expect': OFF,
+    'jest/expect-expect': OFF,
+    'jest/no-export': OFF,
+    'jest/valid-title': OFF,
+    'jest/no-try-expect': OFF,
+    'jest/no-disabled-tests': ERROR,
     'jsx-quotes': ERROR,
     'no-trailing-spaces': ERROR,
     'no-undef': ERROR,
@@ -48,6 +60,7 @@ module.exports = {
     'react/jsx-wrap-multilines': WARN,
     'react/no-did-mount-set-state': WARN,
     'react/no-did-update-set-state': WARN,
+    'react/no-unescaped-entities': OFF,
     'react/no-unknown-property': WARN,
     'react/react-in-jsx-scope': OFF,
     'react/self-closing-comp': WARN,
@@ -64,18 +77,7 @@ module.exports = {
         vars: 'all',
       },
     ],
-    'import/no-extraneous-dependencies': [
-      ERROR,
-      {
-        devDependencies: [
-          '**/__tests__/**/*',
-          '**/*test.*',
-          '**/tests/**/*',
-          '**/build/**/*',
-          '**/test-fixtures.*',
-        ],
-      },
-    ],
+    'import/no-extraneous-dependencies': ERROR,
     quotes: [
       ERROR,
       'single',
@@ -85,8 +87,13 @@ module.exports = {
       ERROR,
       {
         // Curious why we have this rule?
-        // - Enums only work for a subset of use cases that unions of string literals + objects work for and learning one language feature is easier than learning two language features
-        // - Enums are a new language feature which have runtime semantics which means they change TypeScript from JS + types to JS + types + extra language features which is harder to teach without clear advantages for this specific feature
+        // - Enums only work for a subset of use cases that unions of string
+        // literals + objects work for and learning one language feature is
+        // easier than learning two language features
+        // - Enums are a new language feature which have runtime semantics which
+        // means they change TypeScript from JS + types to JS + types + extra
+        // language features which is harder to teach without clear advantages
+        // for this specific feature
         selector: 'TSEnumDeclaration',
         message: 'Use a union of string literals instead of an enum',
       },
@@ -97,10 +104,13 @@ module.exports = {
         extendDefaults: false,
         types: {
           Function:
-            '`Function` types are unsafe. Use more specific function types instead. e.g. (arg: number) => string',
+            '`Function` types are unsafe. Use more specific function types ' +
+            'instead. e.g. (arg: number) => string',
           String: {
             message:
-              'The `String` type refers to the String object which is probably not what you want, you probably want `string` instead which refers to the string primitive type.',
+              'The `String` type refers to the String object which is probably ' +
+              'not what you want, you probably want `string` instead which ' +
+              'refers to the string primitive type.',
             fixWith: 'string',
           },
           ComponentType: reactComponentTypeMessage,
@@ -118,9 +128,26 @@ module.exports = {
     {
       files: ['**/*.{ts,tsx}'],
       rules: {
-        // TypeScript already checks for the following things and they conflict with TypeScript
+        // TypeScript already checks for the following things and they cause conflicts
         'import/no-unresolved': OFF,
         'no-undef': OFF,
+      },
+    },
+    {
+      files: [
+        '**/__tests__/**/*',
+        '**/*stories.*',
+        '**/*test.*',
+        '**/build/**/*',
+        '**/test-fixtures.*',
+        '**/tests/**/*',
+      ],
+      rules: {
+        // Allow importing from packages that aren't listed in package.json for
+        // test and Storybook files
+        // TypeScript will still catch uninstalled imports for us as there will
+        // be no modules or type definitions for them
+        'import/no-extraneous-dependencies': OFF,
       },
     },
   ],
