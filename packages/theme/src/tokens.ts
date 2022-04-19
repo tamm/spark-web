@@ -267,7 +267,7 @@ export const defaultTokens = {
       body: '#f3f4f6',
       surface: surface,
       surfaceMuted: '#f3f4f6',
-      surfacePressed: '#f9fafb',
+      surfacePressed: colors.neutral[300],
 
       fieldAccent: text,
       input: surface,
@@ -283,7 +283,7 @@ export const defaultTokens = {
 
       primary: colors.primary[600],
       primaryLow: colors.primary[100],
-      primaryMuted: '#f0fff1',
+      primaryMuted: colors.primary[200],
 
       secondary: colors.secondary[600],
       // TODO: using yellow instead of secondary
