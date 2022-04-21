@@ -1,4 +1,5 @@
 import { css } from '@emotion/css';
+import { useFocusRing } from '@spark-web/a11y';
 import { Box } from '@spark-web/box';
 import type { IconProps } from '@spark-web/icon';
 import { useLinkComponent } from '@spark-web/link';
@@ -14,6 +15,7 @@ type NavLinkChildren =
   | [string, ReactElement<IconProps>];
 
 export type NavLinkProps = Pick<HTMLAnchorElement, 'href'> & {
+  borderRadius?: 'full' | 'small';
   children: NavLinkChildren;
   inline?: boolean;
   isSelected?: boolean;
@@ -22,7 +24,14 @@ export type NavLinkProps = Pick<HTMLAnchorElement, 'href'> & {
 
 export const NavLink = forwardRef<HTMLAnchorElement, NavLinkProps>(
   (
-    { children, href, inline, isSelected = false, size = 'medium' },
+    {
+      borderRadius = 'small',
+      children,
+      href,
+      inline = false,
+      isSelected = false,
+      size = 'medium',
+    },
     forwardedRef
   ) => {
     const linkComponent = useLinkComponent(forwardedRef);
@@ -41,7 +50,7 @@ export const NavLink = forwardRef<HTMLAnchorElement, NavLinkProps>(
         gap="small"
         paddingY="small"
         paddingX="medium"
-        borderRadius={{ tablet: 'small' }}
+        borderRadius={{ tablet: borderRadius }}
         className={css(styles)}
       >
         {resolveNavLinkChildren({ children, isSelected, size })}
@@ -53,8 +62,10 @@ NavLink.displayName = 'NavLink';
 
 export function useNavLinkStyles(isSelected: boolean) {
   const theme = useTheme();
+  const focusRingStyles = useFocusRing();
 
   return {
+    ':focus': focusRingStyles,
     ':hover': {
       backgroundColor: isSelected
         ? theme.backgroundInteractions.primaryLowHover
