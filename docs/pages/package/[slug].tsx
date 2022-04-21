@@ -1,3 +1,5 @@
+import { Box } from '@spark-web/box';
+import { ButtonLink } from '@spark-web/button';
 import { Heading } from '@spark-web/heading';
 import { Stack } from '@spark-web/stack';
 import type {
@@ -10,7 +12,6 @@ import { MDXRemote } from 'next-mdx-remote';
 import { DocsContent } from '../../components/content';
 import { StorybookLogo } from '../../components/logo';
 import { mdxComponents } from '../../components/mdx-components/mdx-components';
-import { Box, ButtonLink } from '../../components/spark-components';
 import type { Awaited } from '../../types';
 import { getAllPackages, getPackageBySlug } from '../../utils/mdx';
 
@@ -30,13 +31,10 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps<{
-  packages: Awaited<ReturnType<typeof getAllPackages>>;
   source: Awaited<ReturnType<typeof getPackageBySlug>>['source'];
   data: Awaited<ReturnType<typeof getPackageBySlug>>['data'];
   toc: Awaited<ReturnType<typeof getPackageBySlug>>['toc'];
 }> = async ({ params }) => {
-  const packages = await getAllPackages();
-
   if (!params?.slug || typeof params.slug !== 'string') {
     return {
       notFound: true,
@@ -49,7 +47,6 @@ export const getStaticProps: GetStaticProps<{
   return {
     props: {
       data,
-      packages,
       source,
       toc,
     },
