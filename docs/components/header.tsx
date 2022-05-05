@@ -2,11 +2,17 @@ import { css } from '@emotion/css';
 import { useFocusRing, VisuallyHidden } from '@spark-web/a11y';
 import { Box } from '@spark-web/box';
 import { Container } from '@spark-web/container';
+// import { Field } from '@spark-web/field';
 import { Hidden } from '@spark-web/hidden';
 import { MenuIcon, XIcon } from '@spark-web/icon';
+import { Inline } from '@spark-web/inline';
 import { Link } from '@spark-web/link';
 import { Strong, Text } from '@spark-web/text';
+// import { TextInput } from '@spark-web/text-input';
 import { useTheme } from '@spark-web/theme';
+// @ts-expect-error flexsearch sucks
+import { Document as FlexSearchDocument } from 'flexsearch';
+import { useEffect } from 'react';
 
 import { GITHUB_URL, HEADER_HEIGHT, SIDEBAR_WIDTH } from './constants';
 import { useSidebarContext } from './sidebar';
@@ -77,8 +83,12 @@ export function Header() {
             paddingX="xlarge"
             display={{ mobile: 'none', tablet: 'inline-block' }}
           >
-            <Notice />
+            <Inline gap="xlarge">
+              <Notice />
+              <SearchInputBox />
+            </Inline>
           </Box>
+
           <Box
             paddingRight={{ mobile: 'medium', tablet: 'xxlarge' }}
             className={css({ marginLeft: 'auto' })}
@@ -142,4 +152,47 @@ const GitHubLink = () => {
       <GitHubIcon tone="muted" size="small" />
     </Link>
   );
+};
+
+let flexsearchDoc: any;
+
+const SearchInputBox = () => {
+  useEffect(() => {
+    const fetchSearchIndex = async () => {
+      if (flexsearchDoc) {
+        return;
+      }
+      //@ts-ignore seach-index generated after build
+      const flexsearchIndex = await import('../cache/search-index.json');
+      //@ts-expect-error
+      flexsearchDoc = new FlexSearchDocument({
+        document: 'content',
+      });
+      flexsearchIndex.default.forEach(async (element: any) => {
+        await flexsearchDoc.import(element.key, JSON.parse(element.data));
+      });
+    };
+
+    fetchSearchIndex();
+  });
+
+  // const onChange: any = (event: any) => {
+  //   const { value } = event.target;
+  //   if (!flexsearchDoc) {
+  //     console.error('THIS SHOULD BE IMPOSSIBLE!');
+  //     return;
+  //   }
+  //   const results = flexsearchDoc.search(value);
+  //   console.log({ results });
+  // };
+
+  return null;
+
+  // return (
+  //   <>
+  //     <Field label="Search" labelVisibility="hidden">
+  //       <TextInput placeholder="search" onChange={onChange} />
+  //     </Field>
+  //   </>
+  // );
 };

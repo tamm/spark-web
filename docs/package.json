@@ -4,18 +4,19 @@
   "private": true,
   "license": "MIT",
   "scripts": {
-    "build": "./scripts/generate-spark-components.js && yarn playroom:build && INIT_CWD=$PWD next build && yarn storybook:build",
+    "build": "./scripts/generate-components-index.js && INIT_CWD=$PWD next build && yarn playroom:build && yarn storybook:build ",
     "contentlayer:build": "INIT_CWD=$PWD yarn contentlayer build",
-    "dev": "./scripts/generate-spark-components.js && INIT_CWD=$PWD next dev",
+    "dev": "./scripts/generate-components-index.js && INIT_CWD=$PWD next dev",
     "lint": "next lint",
-    "playroom:build": "./scripts/generate-spark-components.js && playroom build",
+    "playroom:build": "./scripts/generate-components-index.js && playroom build",
     "playroom:start": "playroom start",
     "start": "next start",
     "storybook": "start-storybook -p 6006",
     "storybook:build": "build-storybook -o ./public/storybook",
-    "typecheck": "./scripts/generate-spark-components.js tsc --noEmit"
+    "typecheck": "./scripts/generate-components-index.js && yarn contentlayer:build && tsc --noEmit"
   },
   "dependencies": {
+    "//": "Due to https://github.com/nextapps-de/flexsearch/issues/325 (Version 0.7.22 is not published to npm) and 0.7.21 has bugs, we have to pull flexsearch directly from guthub",
     "@babel/core": "^7.16.5",
     "@babel/preset-env": "^7.16.5",
     "@babel/preset-react": "^7.16.5",
@@ -62,6 +63,7 @@
     "clipboard-copy": "^4.0.1",
     "contentlayer": "^0.2.4",
     "esbuild": "^0.14.38",
+    "flexsearch": "https://github.com/nextapps-de/flexsearch#bffb255b7904cb7f79f027faeb963ecef0a85dba",
     "gray-matter": "^4.0.3",
     "mdx-bundler": "^9.0.0",
     "next": "^12.0.7",
@@ -87,6 +89,7 @@
     "@storybook/react": "^6.4.21",
     "@types/node": "16.11.13",
     "@types/react": "^17.0.12",
+    "chokidar": "^3.5.3",
     "date-fns": "^2.28.0",
     "typescript": "4.4.3"
   }
