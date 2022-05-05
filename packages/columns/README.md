@@ -78,7 +78,7 @@ Columns can be collapsed into a single vertical stack responsively using the
 | -------------- | ------------------------------------------------------- | ------- | -------------------------------------------------------------------------------------- |
 | alignY?        | [ResponsiveProp][responsive-prop]\<AlignY>              |         | Vertically align items within the container.                                           |
 | children       | React.ReactNode                                         |         | Children elements to be rendered within the column component representing each column. |
-| collapseBelow? | [ResponsiveRangeProps][responsive-range-props]('below') |         | At which breakpoint, if amy, should the columns collapse.                              |
+| collapseBelow? | [ResponsiveRangeProps][responsive-range-props]['below'] |         | At which breakpoint, if amy, should the columns collapse.                              |
 | gap?           | [Gap][gap]                                              |         | The size of the gap between each column.                                               |
 | template?      | number[]                                                |         | Define the relative width of each column. By default each column is the same width.    |
 
@@ -89,8 +89,8 @@ listed here (excluding `display`, `alignItems`, `gap`, `flexDirection`,
 Extra props are passed into the underlying [`Box`](/package/box) component.
 
 [responsive-prop]:
-  https://bitbucket.org/brighte-energy/energy/src/537c678a81090af545969504776c6b3d2e67743e/spark-web/packages/theme/src/themeUtils.ts#spark-web/packages/theme/src/themeUtils.ts-11
+  https://github.com/brighte-labs/spark-web/blob/e503bea4f7668d187ec7a78f99c5ed374417588b/packages/theme/src/themeUtils.ts#L11
 [responsive-range-props]:
-  https://bitbucket.org/brighte-energy/energy/src/537c678a81090af545969504776c6b3d2e67743e/spark-web/packages/theme/src/themeutils.ts#spark-web/packages/theme/src/themeutils.ts-130
+  https://github.com/brighte-labs/spark-web/blob/e503bea4f7668d187ec7a78f99c5ed374417588b/packages/theme/src/themeUtils.ts#L130
 [gap]:
-  https://bitbucket.org/brighte-energy/energy/src/537c678a81090af545969504776c6b3d2e67743e/spark-web/packages/columns/src/Columns.tsx#spark-web/packages/columns/src/Columns.tsx-14
+  https://github.com/brighte-labs/spark-web/blob/e7f6f4285b4cfd876312cc89fbdd094039aa239a/packages/columns/src/Columns.tsx#L17
