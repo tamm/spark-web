@@ -45,95 +45,56 @@ options are: `low` and `high`.
 Defaults to `high`.
 
 ```jsx live
-<Stack gap="large">
-  <Text weight="strong">High prominence</Text>
-  <Inline gap="small">
-    <Button prominence="high" tone="primary">
-      <LightBulbIcon />
-      Primary
-    </Button>
-    <Button prominence="high" tone="secondary">
-      <LightBulbIcon />
-      Secondary
-    </Button>
-    <Button prominence="high" tone="neutral">
-      <LightBulbIcon />
-      Neutral
-    </Button>
-    <Button prominence="high" tone="positive">
-      <LightBulbIcon />
-      Positive
-    </Button>
-    <Button prominence="high" tone="critical">
-      <LightBulbIcon />
-      Critical
-    </Button>
-  </Inline>
-  <Divider />
-  <Text weight="strong">Low prominence</Text>
-  <Inline gap="small">
-    <Button prominence="low" tone="primary">
-      <LightBulbIcon />
-      Primary
-    </Button>
-    <Button prominence="low" tone="secondary">
-      <LightBulbIcon />
-      Secondary
-    </Button>
-    <Button prominence="low" tone="neutral">
-      <LightBulbIcon />
-      Neutral
-    </Button>
-    <Button prominence="low" tone="positive">
-      <LightBulbIcon />
-      Positive
-    </Button>
-    <Button prominence="low" tone="critical">
-      <LightBulbIcon />
-      Critical
-    </Button>
-    <Button prominence="low" tone="caution">
-      <LightBulbIcon />
-      Critical
-    </Button>
-    <Button prominence="low" tone="info">
-      <LightBulbIcon />
-      Informative
-    </Button>
-  </Inline>
-  <Divider />
-  <Text weight="strong">None prominence</Text>
-  <Inline gap="small">
-    <Button prominence="none" tone="primary">
-      <LightBulbIcon />
-      Primary
-    </Button>
-    <Button prominence="none" tone="secondary">
-      <LightBulbIcon />
-      Secondary
-    </Button>
-    <Button prominence="none" tone="neutral">
-      <LightBulbIcon />
-      Neutral
-    </Button>
-    <Button prominence="none" tone="positive">
-      <LightBulbIcon />
-      Positive
-    </Button>
-    <Button prominence="none" tone="critical">
-      <LightBulbIcon />
-      Critical
-    </Button>
-    <Button prominence="none" tone="caution">
-      <LightBulbIcon />
-      Critical
-    </Button>
-    <Button prominence="none" tone="info">
-      <LightBulbIcon />
-      Informative
-    </Button>
-  </Inline>
-</Stack>
+const baseButtonTones = [
+  { label: 'Primary', tone: 'primary' },
+  { label: 'Secondary', tone: 'secondary' },
+  { label: 'Neutral', tone: 'neutral' },
+  { label: 'Positive', tone: 'positive' },
+  { label: 'Critical', tone: 'critical' },
+];
+
+const extraButtonTones = [
+  { label: 'Caution', tone: 'caution' },
+  { label: 'Informative', tone: 'info' },
+];
+
+return (
+  <Stack gap="large" dividers>
+    <Stack gap="large">
+      <Text weight="strong">High prominence</Text>
+      <Inline gap="small">
+        {baseButtonTones.map(({ label, tone }) => (
+          <Button key={label} tone={tone} prominence="high">
+            <LightBulbIcon />
+            {label}
+          </Button>
+        ))}
+      </Inline>
+    </Stack>
+    <Stack gap="large">
+      <Text weight="strong">Low prominence</Text>
+      <Inline gap="small">
+        {baseButtonTones.concat(extraButtonTones).map(({ label, tone }) => (
+          <Button key={label} tone={tone} prominence="low">
+            <LightBulbIcon />
+            {label}
+          </Button>
+        ))}
+      </Inline>
+    </Stack>
+    <Stack gap="large">
+      <Text weight="strong">None prominence</Text>
+      <Inline gap="small">
+        {baseButtonTones.concat(extraButtonTones).map(({ label, tone }) => (
+          <Button key={label} tone={tone} prominence="none">
+            <LightBulbIcon />
+            {label}
+          </Button>
+        ))}
+      </Inline>
+    </Stack>
+  </Stack>
+);
 ```
 
 ## Size
@@ -186,6 +147,44 @@ users of assistive technology.
 </Inline>
 ```
 
+## Loading
+
+Buttons have an optional `loading` prop to indicate that an action is in
+progress. When this is true a spinner will be displayed.
+
+Note: buttons will not be interative when `loading` is true.
+
+```jsx live
+const [loading, setLoading] = React.useState(false);
+const toggle = event => setLoading(event.target.checked);
+
+return (
+  <Stack gap="large">
+    <Checkbox size="medium" checked={loading} onChange={toggle}>
+      <Text>Toggle loading state</Text>
+    </Checkbox>
+    <Inline gap="large">
+      <Button label="Download" loading={loading}>
+        <DownloadIcon />
+      </Button>
+      <Button loading={loading}>
+        <DownloadIcon />
+        Download
+      </Button>
+    </Inline>
+    <Inline gap="large">
+      <Button label="Download" size="large" loading={loading}>
+        <DownloadIcon />
+      </Button>
+      <Button size="large" loading={loading}>
+        <DownloadIcon />
+        Download
+      </Button>
+    </Inline>
+  </Stack>
+);
+```
+
 ## ButtonLink
 
 The appearance of a button, with the semantics of a link — shares `Button` API,
@@ -210,6 +209,7 @@ with the exception of `href` vs `onClick` props.
 | href              | string                                                                                   |           | Specifies the url the button should redirect to upon being clicked. Only applicable for `ButtonLink`.                                     |
 | id?               | string                                                                                   |           | Unique identifier for the button.                                                                                                         |
 | label?            | string                                                                                   |           | Implicit label for buttons only required for icon-only buttons for accessibility reasons.                                                 |
+| loading?          | boolean                                                                                  |           | When true, the button will display a loading spinner.                                                                                     |
 | onClick?          | Function                                                                                 |           | Function to be fired following a click event of the button. Only applicable for `Button`.                                                 |
 | prominence?       | 'high' \| 'low'                                                                          | 'high'    | Sets the visual prominence of the button.                                                                                                 |
 | size?             | 'medium' \| 'large'                                                                      | 'medium'  | Sets the size of the button.                                                                                                              |
