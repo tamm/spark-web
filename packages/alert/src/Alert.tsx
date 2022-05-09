@@ -29,6 +29,7 @@ export type AlertProps = {
 export const Alert = ({
   children,
   closeLabel = 'Close alert',
+  data,
   heading,
   icon,
   onClose,
@@ -48,6 +49,7 @@ export const Alert = ({
       gap="medium"
     >
       <Box
+        data={data}
         display="flex"
         flex={1}
         alignItems="start"
