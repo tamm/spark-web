@@ -1,4 +1,5 @@
 import type { Tone } from '@spark-web/field';
+import type { DataAttributeMap } from '@spark-web/utils/internal';
 import type { InputHTMLAttributes, ReactNode } from 'react';
 
 export type CheckboxSize = 'small' | 'medium';
@@ -11,6 +12,8 @@ type InputProps = Omit<
 export type CheckboxPrimitiveProps = {
   /** When true, the checkbox will be checked. */
   checked?: boolean;
+  /** Sets data attributes on the component. */
+  data?: DataAttributeMap;
   /** When true, the checkbox will be disabled. */
   disabled?: boolean;
   /** The size of the checkbox. */

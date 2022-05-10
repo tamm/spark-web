@@ -90,15 +90,16 @@ illustrate intent. The supported tones are: `critical`, `positive` and
 
 ### Checkbox
 
-| Prop      | Type                                  | Default   | Description                                                       |
-| --------- | ------------------------------------- | --------- | ----------------------------------------------------------------- |
-| children  | React.ReactNode                       |           | The checkbox label content.                                       |
-| checked?  | boolean                               |           | When true, the checkbox will be checked.                          |
-| disabled? | boolean                               | false     | When true, the checkbox will be disabled.                         |
-| size?     | 'small' \| 'medium'                   | 'small'   | The size of the checkbox.                                         |
-| value?    | string                                |           | The value of the checkbox.                                        |
-| message?  | string                                |           | Provide a message, informing the user about changes in state.     |
-| tone?     | 'critical' \| 'positive' \| 'neutral' | 'neutral' | Provide a tone to influence elements of the field, and its input. |
+| Prop      | Type                                   | Default   | Description                                                       |
+| --------- | -------------------------------------- | --------- | ----------------------------------------------------------------- |
+| children  | React.ReactNode                        |           | The checkbox label content.                                       |
+| checked?  | boolean                                |           | When true, the checkbox will be checked.                          |
+| disabled? | boolean                                | false     | When true, the checkbox will be disabled.                         |
+| size?     | 'small' \| 'medium'                    | 'small'   | The size of the checkbox.                                         |
+| value?    | string                                 |           | The value of the checkbox.                                        |
+| message?  | string                                 |           | Provide a message, informing the user about changes in state.     |
+| tone?     | 'critical' \| 'positive' \| 'neutral'  | 'neutral' | Provide a tone to influence elements of the field, and its input. |
+| data?     | [DataAttributeMap][data-attribute-map] |           | Sets data attributes on the component.                            |
 
 The `Checkbox` component also extends `InputHTMLAttributes` props and are not
 listed here.
@@ -114,3 +115,6 @@ listed here.
 
 The `CheckboxPrimitive` component also extends `InputHTMLAttributes` props and
 are not listed here.
+
+[data-attribute-map]:
+  https://github.com/brighte-labs/spark-web/blob/e7f6f4285b4cfd876312cc89fbdd094039aa239a/packages/utils/src/internal/buildDataAttributes.ts#L1
