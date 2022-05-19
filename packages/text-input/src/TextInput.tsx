@@ -2,7 +2,7 @@ import { css } from '@emotion/css';
 import { useFocusRing } from '@spark-web/a11y';
 import type { BoxProps } from '@spark-web/box';
 import { Box } from '@spark-web/box';
-import type { FieldContextType } from '@spark-web/field';
+import type { FieldState } from '@spark-web/field';
 import { useFieldContext } from '@spark-web/field';
 import { useText } from '@spark-web/text';
 import { useTheme } from '@spark-web/theme';
@@ -64,7 +64,7 @@ export type TextInputProps = {
 /** Organize and emphasize information quickly and effectively in a list of text elements. */
 export const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
   ({ children, data, ...consumerProps }, forwardedRef) => {
-    const { disabled, invalid, ...a11yProps } = useFieldContext();
+    const [{ disabled, invalid }, a11yProps] = useFieldContext();
     const { startAdornment, endAdornment } = childrenToAdornments(children);
 
     return (
@@ -75,8 +75,9 @@ export const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
         endAdornment={endAdornment}
       >
         <Box
+          {...consumerProps}
+          {...a11yProps}
           as="input"
-          aria-invalid={invalid || undefined}
           ref={forwardedRef}
           data={data}
           disabled={disabled}
@@ -88,8 +89,6 @@ export const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
           paddingLeft={startAdornment ? 'none' : 'medium'}
           paddingRight={endAdornment ? 'none' : 'medium'}
           className={css(useInput({ disabled, invalid }))}
-          {...a11yProps}
-          {...consumerProps}
         />
       </InputContainer>
     );
@@ -98,7 +97,7 @@ export const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
 
 TextInput.displayName = 'TextInput';
 
-export type UseInputProps = Pick<FieldContextType, 'disabled' | 'invalid'>;
+export type UseInputProps = FieldState;
 
 export const useInput = ({ disabled }: UseInputProps) => {
   const theme = useTheme();
@@ -136,7 +135,7 @@ export const InputContainer = ({
   endAdornment,
   ...boxProps
 }: InputContainerProps) => {
-  const { disabled, invalid } = useFieldContext();
+  const [{ disabled, invalid }] = useFieldContext();
 
   return (
     <Box
