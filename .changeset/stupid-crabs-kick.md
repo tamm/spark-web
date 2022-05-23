@@ -2,6 +2,7 @@
 '@spark-web/a11y': patch
 '@spark-web/accordion': patch
 '@spark-web/alert': patch
+'@spark-web/analytics': patch
 '@spark-web/box': patch
 '@spark-web/button': patch
 '@spark-web/checkbox': patch
@@ -20,8 +21,10 @@
 '@spark-web/hidden': patch
 '@spark-web/icon': patch
 '@spark-web/inline': patch
+'@spark-web/link': patch
 '@spark-web/modal-dialog': patch
 '@spark-web/nav-link': patch
+'@spark-web/next-utils': patch
 '@spark-web/password-input': patch
 '@spark-web/radio': patch
 '@spark-web/row': patch
@@ -35,6 +38,7 @@
 '@spark-web/text-link': patch
 '@spark-web/text-list': patch
 '@spark-web/theme': patch
+'@spark-web/utils': patch
 ---
 
-Update Emotion dependencies
+Update dependencies
