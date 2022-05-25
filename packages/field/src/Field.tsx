@@ -6,7 +6,6 @@ import { Stack } from '@spark-web/stack';
 import { Text } from '@spark-web/text';
 import { useTheme } from '@spark-web/theme';
 import type { DataAttributeMap } from '@spark-web/utils/internal';
-import { buildDataAttributes } from '@spark-web/utils/internal';
 import type { ReactElement, ReactNode } from 'react';
 import { forwardRef, Fragment } from 'react';
 
@@ -115,22 +114,16 @@ export const Field = forwardRef<HTMLDivElement, FieldProps>(
       ),
     };
 
+    const LabelWrapper =
+      labelVisibility === 'hidden' ? Fragment : FieldLabelWrapper;
+
     return (
       <FieldContextProvider value={fieldContext}>
-        <Stack
-          gap={labelVisibility === 'hidden' ? undefined : 'medium'}
-          ref={forwardedRef}
-          {...(data ? buildDataAttributes(data) : null)}
-        >
-          <Box
-            display="flex"
-            alignItems="center"
-            justifyContent="spaceBetween"
-            gap="large"
-          >
+        <Stack ref={forwardedRef} data={data} gap="medium">
+          <LabelWrapper>
             {labelElement[labelVisibility]}
             {adornment}
-          </Box>
+          </LabelWrapper>
 
           {description && (
             <Text tone="muted" size="small" id={descriptionId}>
@@ -163,6 +156,18 @@ export function useFieldIds(id?: string) {
 
 // Styled components
 // ------------------------------
+function FieldLabelWrapper({ children }: { children: ReactNode }) {
+  return (
+    <Box
+      display="flex"
+      alignItems="center"
+      justifyContent="spaceBetween"
+      gap="large"
+    >
+      {children}
+    </Box>
+  );
+}
 
 const messageToneMap = {
   critical: 'critical',
