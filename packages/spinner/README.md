@@ -1,6 +1,6 @@
 ---
 title: Spinner
-storybookPath: feedback-overlays-spinner--default
+storybookPath: feedback-overlays-spinner-—default
 ---
 
 Spinner indicates users that their request is in progress
@@ -19,22 +19,22 @@ const tones = ['secondary', 'critical', 'positive', 'neutral'];
 return (
   <Stack align="left" gap="xxlarge">
     <Inline gap="xxlarge">
-      {tones.map(tone => (
-        <Button tone={tone} prominence="low" key={tone}>
+      {tones.map((tone, index) => (
+        <Button tone={tone} prominence="low" key={`low-btn-${index}`}>
           <Spinner />
         </Button>
       ))}
     </Inline>
     <Inline gap="xxlarge">
-      {tones.map(tone => (
-        <Button tone={tone} key={tone}>
+      {tones.map((tone, index) => (
+        <Button tone={tone} key={`btn-${index}`}>
           <Spinner />
         </Button>
       ))}
     </Inline>
     <Inline gap="xxlarge">
-      {tones.map(tone => (
-        <Spinner tone={tone} key={tone} />
+      {tones.map((tone, index) => (
+        <Spinner tone={tone} key={`spinner-${index}`} />
       ))}
     </Inline>
   </Stack>
