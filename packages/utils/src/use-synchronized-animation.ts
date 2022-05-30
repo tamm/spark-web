@@ -24,21 +24,19 @@ export function useSynchronizedAnimation(animationName: string) {
       animation => animation.effect?.target === ref.current
     );
 
-    if (animationTarget) {
-      if (animationTarget === animations[0] && stashedTime) {
-        animationTarget.currentTime = stashedTime;
-      }
-
-      if (animationTarget && animationTarget !== animations[0]) {
-        animationTarget.currentTime = animations[0].currentTime;
-      }
-
-      return () => {
-        if (animationTarget === animations[0]) {
-          stashedTime = animationTarget.currentTime;
-        }
-      };
+    if (animationTarget === animations[0] && stashedTime) {
+      animationTarget.currentTime = stashedTime;
     }
+
+    if (animationTarget && animationTarget !== animations[0]) {
+      animationTarget.currentTime = animations[0].currentTime;
+    }
+
+    return () => {
+      if (animationTarget === animations[0]) {
+        stashedTime = animationTarget.currentTime;
+      }
+    };
   }, [animationName]);
 
   return ref;
