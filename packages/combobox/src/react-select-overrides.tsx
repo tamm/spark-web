@@ -75,11 +75,8 @@ export const useReactSelectStylesOverride = <Item,>({
       ...(state.isFocused
         ? focusRingStyles
         : invalid
-        ? {
-            borderColor: theme.color.foreground.critical,
-          }
-        : {}),
-      boxShadow: theme.shadow.small,
+        ? { borderColor: theme.color.foreground.critical }
+        : { boxShadow: theme.shadow.small }),
     }),
 
     dropdownIndicator: (provided, state) => ({
@@ -87,11 +84,7 @@ export const useReactSelectStylesOverride = <Item,>({
       transitionProperty: 'transform',
       transitionTimingFunction: 'linear',
       transitionDuration: '150ms',
-      ...(state.isFocused
-        ? {
-            transform: 'rotate(180deg)',
-          }
-        : {}),
+      ...(state.isFocused ? { transform: 'rotate(180deg)' } : {}),
     }),
 
     group: provided => ({
