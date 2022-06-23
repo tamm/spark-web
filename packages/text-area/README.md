@@ -1,6 +1,7 @@
 ---
 title: Text Area
 storybookPath: forms-textarea--default
+isExperimentalPackage: false
 ---
 
 Allows the user to input plain text spanning multiple lines.

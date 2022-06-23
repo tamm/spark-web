@@ -1,3 +1,4 @@
+import { Alert } from '@spark-web/alert';
 import { ButtonLink } from '@spark-web/button';
 import { Divider } from '@spark-web/divider';
 import { Heading } from '@spark-web/heading';
@@ -36,7 +37,9 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps<{
   code: string;
   packageName: string;
+  packageVersion: string;
   storybookPath: string | null;
+  isExperimentalPackage: boolean;
   title: string;
   toc: HeadingData[];
   propsDoc: any;
@@ -52,6 +55,8 @@ export const getStaticProps: GetStaticProps<{
     props: {
       code: pkg.body.code,
       packageName: pkg.packageName,
+      packageVersion: pkg.version,
+      isExperimentalPackage: Boolean(pkg.isExperimentalPackage),
       storybookPath: pkg.storybookPath ?? null,
       title: pkg.title,
       toc: pkg.toc,
@@ -125,6 +130,8 @@ const formatPropsData = (
 export default function Packages({
   code,
   packageName,
+  packageVersion,
+  isExperimentalPackage,
   storybookPath,
   title,
   toc,
@@ -135,7 +142,9 @@ export default function Packages({
   return (
     <DocsContent pageTitle={title} includeNavigation toc={toc}>
       <Stack gap="xlarge">
+        <Text tone="muted">v{packageVersion}</Text>
         <Heading level="1">{title}</Heading>
+        <ComponentMaturity isExperimentalPackage={isExperimentalPackage} />
         <OpenInLinks packageSlug={packageSlug} storybookPath={storybookPath} />
         <InstallationInstructions
           packageName={packageName}
@@ -145,6 +154,25 @@ export default function Packages({
         <MDXContent code={code} data={{ props: propsDoc }} />
       </Stack>
     </DocsContent>
+  );
+}
+
+function ComponentMaturity({
+  isExperimentalPackage,
+}: {
+  isExperimentalPackage: boolean;
+}) {
+  return (
+    <Alert
+      tone={isExperimentalPackage ? 'caution' : 'positive'}
+      heading={isExperimentalPackage ? 'Experimental' : 'Stable'}
+    >
+      <Text>
+        This component is considered{' '}
+        {isExperimentalPackage ? 'experimental' : 'stable'}. Reach out to the
+        Spark team to find out more about what this means.
+      </Text>
+    </Alert>
   );
 }
 

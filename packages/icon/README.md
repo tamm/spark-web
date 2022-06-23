@@ -1,5 +1,6 @@
 ---
 title: Icon
+isExperimentalPackage: false
 ---
 
 Spark uses the “outline” variants of the wonderful open-source

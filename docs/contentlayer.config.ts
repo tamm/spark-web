@@ -55,6 +55,12 @@ export const Package = defineDocumentType(() => ({
       description: 'Path for Storybook',
       required: false,
     },
+    isExperimentalPackage: {
+      type: 'boolean',
+      description: 'Maturity status of the component',
+      required: false,
+      default: true,
+    },
   },
   computedFields: {
     packageName: {
@@ -65,6 +71,16 @@ export const Package = defineDocumentType(() => ({
             await readFile(`../${pkg._raw.sourceFileDir}/package.json`)
           ).toString()
         ).name;
+      },
+    },
+    componentMaturityStatus: {
+      type: 'string',
+      resolve: async pkg => {
+        return JSON.parse(
+          (
+            await readFile(`../${pkg._raw.sourceFileDir}/package.json`)
+          ).toString()
+        ).componentMaturityStatus;
       },
     },
     slug: {
