@@ -262,6 +262,7 @@ export const Dropzone = forwardRef<HTMLInputElement, DropzoneProps>(
                 ? 'Maximum number of files reached'
                 : 'These files couldn’t be added:'
             }
+            closeLabel="Dismiss alert"
             onClose={() => setFileError(undefined)}
           >
             {fileError.type === 'too-many-files' ? (

@@ -26,18 +26,25 @@ type AlertTones = keyof typeof toneToIcon;
 
 export type AlertProps = {
   children: string | ReactNode;
-  closeLabel?: string;
   data?: DataAttributeMap;
   heading?: string;
   icon?: ({ size: sizeKey, tone }: IconProps) => JSX.Element;
   id?: string;
-  onClose?: () => void;
   tone: AlertTones;
-};
+} & (
+  | {
+      closeLabel: string;
+      onClose: () => void;
+    }
+  | {
+      closeLabel?: never;
+      onClose?: never;
+    }
+);
 
 export function Alert({
   children,
-  closeLabel = 'Close alert',
+  closeLabel = 'Dismiss alert',
   data,
   heading,
   icon,
@@ -76,7 +83,12 @@ export function Alert({
       </Row>
       {onClose && (
         <Row padding="small" alignSelf="start">
-          <Button label={closeLabel} tone={tone} prominence="low">
+          <Button
+            label={closeLabel}
+            onClick={onClose}
+            prominence="low"
+            tone={tone}
+          >
             <XIcon size="xxsmall" />
           </Button>
         </Row>
