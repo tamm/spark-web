@@ -19,7 +19,7 @@ import { components } from 'react-select';
 export const useReactSelectComponentsOverride = (
   data?: DataAttributeMap
 ): SelectComponentsConfig<any, false, GroupBase<any>> => {
-  const [, fieldProps] = useFieldContext();
+  const [{ invalid }, fieldProps] = useFieldContext();
 
   return useMemo(
     () => ({
@@ -57,8 +57,14 @@ export const useReactSelectComponentsOverride = (
           </Box>
         </components.NoOptionsMessage>
       ),
+
+      SingleValue: ({ children, ...props }) => (
+        <components.SingleValue {...props}>
+          <Box data={invalid ? { invalid } : undefined}>{children}</Box>
+        </components.SingleValue>
+      ),
     }),
-    [data, fieldProps]
+    [data, fieldProps, invalid]
   );
 };
 
@@ -174,6 +180,11 @@ export const useReactSelectStylesOverride = <Item,>({
             : undefined,
         },
       },
+    }),
+
+    singleValue: provided => ({
+      ...provided,
+      '[data-invalid=true]': { color: theme.color.foreground.muted },
     }),
   };
 };

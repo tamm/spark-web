@@ -144,7 +144,7 @@ export const useInputStyles = ({
         },
       },
       ':focus': { outline: 'none' },
-      ':invalid': { color: theme.color.foreground.muted },
+      '&[aria-invalid=true]': { color: theme.color.foreground.muted },
     },
   ] as const;
 };
