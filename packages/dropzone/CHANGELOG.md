@@ -1,5 +1,39 @@
 # @spark-web/dropzone
 
+## 2.0.4
+
+### Patch Changes
+
+- [#173](https://github.com/brighte-labs/spark-web/pull/173)
+  [`90b7e9c`](https://github.com/brighte-labs/spark-web/commit/90b7e9cf4eb7e864d765c74b22c3dedf3d262e25)
+  Thanks [@lukebennett88](https://github.com/lukebennett88)! - Update babel
+  dependency
+
+* [#180](https://github.com/brighte-labs/spark-web/pull/180)
+  [`010f6e3`](https://github.com/brighte-labs/spark-web/commit/010f6e33d87097e0beba17815bc2d66750e22f65)
+  Thanks [@lukebennett88](https://github.com/lukebennett88)! - Add `closeLabel`
+  to Alert inside of Dropzone
+
+* Updated dependencies
+  [[`be99536`](https://github.com/brighte-labs/spark-web/commit/be99536abb56dd26e5c9a1703e6df9c7860b449b),
+  [`90b7e9c`](https://github.com/brighte-labs/spark-web/commit/90b7e9cf4eb7e864d765c74b22c3dedf3d262e25),
+  [`754a664`](https://github.com/brighte-labs/spark-web/commit/754a664b639c66cf121c28eb9883d62015711a59),
+  [`be99536`](https://github.com/brighte-labs/spark-web/commit/be99536abb56dd26e5c9a1703e6df9c7860b449b),
+  [`010f6e3`](https://github.com/brighte-labs/spark-web/commit/010f6e33d87097e0beba17815bc2d66750e22f65),
+  [`c3867af`](https://github.com/brighte-labs/spark-web/commit/c3867af7b77dfae3580ab63a5d5c9e8452f2da62),
+  [`d935c57`](https://github.com/brighte-labs/spark-web/commit/d935c57c2302700e8a2332b757d38220b9c47f84)]:
+  - @spark-web/button@1.3.0
+  - @spark-web/a11y@1.2.0
+  - @spark-web/alert@2.0.0
+  - @spark-web/box@1.0.7
+  - @spark-web/field@3.0.3
+  - @spark-web/icon@1.1.5
+  - @spark-web/stack@1.0.7
+  - @spark-web/text-list@2.0.2
+  - @spark-web/text@1.0.7
+  - @spark-web/theme@3.0.3
+  - @spark-web/utils@1.2.0
+
 ## 2.0.3
 
 ### Patch Changes

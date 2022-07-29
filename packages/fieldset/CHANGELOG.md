@@ -1,5 +1,21 @@
 # @spark-web/fieldset
 
+## 1.1.3
+
+### Patch Changes
+
+- [#173](https://github.com/brighte-labs/spark-web/pull/173)
+  [`90b7e9c`](https://github.com/brighte-labs/spark-web/commit/90b7e9cf4eb7e864d765c74b22c3dedf3d262e25)
+  Thanks [@lukebennett88](https://github.com/lukebennett88)! - Update babel
+  dependency
+
+- Updated dependencies
+  [[`90b7e9c`](https://github.com/brighte-labs/spark-web/commit/90b7e9cf4eb7e864d765c74b22c3dedf3d262e25)]:
+  - @spark-web/box@1.0.7
+  - @spark-web/stack@1.0.7
+  - @spark-web/text@1.0.7
+  - @spark-web/theme@3.0.3
+
 ## 1.1.2
 
 ### Patch Changes

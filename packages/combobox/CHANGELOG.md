@@ -1,5 +1,44 @@
 # @spark-web/combobox
 
+## 1.4.1
+
+### Patch Changes
+
+- [#172](https://github.com/brighte-labs/spark-web/pull/172)
+  [`2b51ca5`](https://github.com/brighte-labs/spark-web/commit/2b51ca57f127929d4354a5dea8e46786ab03d655)
+  Thanks [@lukebennett88](https://github.com/lukebennett88)! - Sort props and
+  fix variable shadowing
+
+* [#173](https://github.com/brighte-labs/spark-web/pull/173)
+  [`90b7e9c`](https://github.com/brighte-labs/spark-web/commit/90b7e9cf4eb7e864d765c74b22c3dedf3d262e25)
+  Thanks [@lukebennett88](https://github.com/lukebennett88)! - Update babel
+  dependency
+
+- [#178](https://github.com/brighte-labs/spark-web/pull/178)
+  [`c3867af`](https://github.com/brighte-labs/spark-web/commit/c3867af7b77dfae3580ab63a5d5c9e8452f2da62)
+  Thanks [@lukebennett88](https://github.com/lukebennett88)! - Switch from using
+  `:invalid` pseudo-class to using data-attribute for invalid styles of inputs
+
+* [#173](https://github.com/brighte-labs/spark-web/pull/173)
+  [`90b7e9c`](https://github.com/brighte-labs/spark-web/commit/90b7e9cf4eb7e864d765c74b22c3dedf3d262e25)
+  Thanks [@lukebennett88](https://github.com/lukebennett88)! - Update
+  react-select dependency
+
+* Updated dependencies
+  [[`90b7e9c`](https://github.com/brighte-labs/spark-web/commit/90b7e9cf4eb7e864d765c74b22c3dedf3d262e25),
+  [`be99536`](https://github.com/brighte-labs/spark-web/commit/be99536abb56dd26e5c9a1703e6df9c7860b449b),
+  [`c3867af`](https://github.com/brighte-labs/spark-web/commit/c3867af7b77dfae3580ab63a5d5c9e8452f2da62),
+  [`c3867af`](https://github.com/brighte-labs/spark-web/commit/c3867af7b77dfae3580ab63a5d5c9e8452f2da62)]:
+  - @spark-web/a11y@1.2.0
+  - @spark-web/box@1.0.7
+  - @spark-web/field@3.0.3
+  - @spark-web/icon@1.1.5
+  - @spark-web/spinner@1.0.5
+  - @spark-web/text-input@2.0.1
+  - @spark-web/text@1.0.7
+  - @spark-web/theme@3.0.3
+  - @spark-web/utils@1.2.0
+
 ## 1.4.0
 
 ### Minor Changes

@@ -1,5 +1,21 @@
 # @spark-web/utils
 
+## 1.2.0
+
+### Minor Changes
+
+- [#178](https://github.com/brighte-labs/spark-web/pull/178)
+  [`c3867af`](https://github.com/brighte-labs/spark-web/commit/c3867af7b77dfae3580ab63a5d5c9e8452f2da62)
+  Thanks [@lukebennett88](https://github.com/lukebennett88)! - Enable booleans
+  for buildDataAttributes utility
+
+### Patch Changes
+
+- [#173](https://github.com/brighte-labs/spark-web/pull/173)
+  [`90b7e9c`](https://github.com/brighte-labs/spark-web/commit/90b7e9cf4eb7e864d765c74b22c3dedf3d262e25)
+  Thanks [@lukebennett88](https://github.com/lukebennett88)! - Update babel
+  dependency
+
 ## 1.1.5
 
 ### Patch Changes

@@ -1,5 +1,24 @@
 # @spark-web/next-utils
 
+## 1.0.7
+
+### Patch Changes
+
+- [#173](https://github.com/brighte-labs/spark-web/pull/173)
+  [`90b7e9c`](https://github.com/brighte-labs/spark-web/commit/90b7e9cf4eb7e864d765c74b22c3dedf3d262e25)
+  Thanks [@lukebennett88](https://github.com/lukebennett88)! - Update babel
+  dependency
+
+* [#173](https://github.com/brighte-labs/spark-web/pull/173)
+  [`90b7e9c`](https://github.com/brighte-labs/spark-web/commit/90b7e9cf4eb7e864d765c74b22c3dedf3d262e25)
+  Thanks [@lukebennett88](https://github.com/lukebennett88)! - Update next
+  dependency
+
+* Updated dependencies
+  [[`90b7e9c`](https://github.com/brighte-labs/spark-web/commit/90b7e9cf4eb7e864d765c74b22c3dedf3d262e25)]:
+  - @spark-web/link@1.0.7
+  - @spark-web/ssr@1.0.6
+
 ## 1.0.6
 
 ### Patch Changes

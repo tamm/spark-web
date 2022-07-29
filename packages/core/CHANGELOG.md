@@ -1,5 +1,23 @@
 # @spark-web/core
 
+## 2.1.2
+
+### Patch Changes
+
+- [#173](https://github.com/brighte-labs/spark-web/pull/173)
+  [`90b7e9c`](https://github.com/brighte-labs/spark-web/commit/90b7e9cf4eb7e864d765c74b22c3dedf3d262e25)
+  Thanks [@lukebennett88](https://github.com/lukebennett88)! - Update babel
+  dependency
+
+- Updated dependencies
+  [[`90b7e9c`](https://github.com/brighte-labs/spark-web/commit/90b7e9cf4eb7e864d765c74b22c3dedf3d262e25),
+  [`be99536`](https://github.com/brighte-labs/spark-web/commit/be99536abb56dd26e5c9a1703e6df9c7860b449b),
+  [`c3867af`](https://github.com/brighte-labs/spark-web/commit/c3867af7b77dfae3580ab63a5d5c9e8452f2da62)]:
+  - @spark-web/a11y@1.2.0
+  - @spark-web/link@1.0.7
+  - @spark-web/theme@3.0.3
+  - @spark-web/utils@1.2.0
+
 ## 2.1.1
 
 ### Patch Changes

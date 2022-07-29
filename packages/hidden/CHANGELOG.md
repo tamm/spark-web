@@ -1,5 +1,23 @@
 # @spark-web/hidden
 
+## 1.0.8
+
+### Patch Changes
+
+- [#173](https://github.com/brighte-labs/spark-web/pull/173)
+  [`90b7e9c`](https://github.com/brighte-labs/spark-web/commit/90b7e9cf4eb7e864d765c74b22c3dedf3d262e25)
+  Thanks [@lukebennett88](https://github.com/lukebennett88)! - Update babel
+  dependency
+
+- Updated dependencies
+  [[`90b7e9c`](https://github.com/brighte-labs/spark-web/commit/90b7e9cf4eb7e864d765c74b22c3dedf3d262e25),
+  [`c3867af`](https://github.com/brighte-labs/spark-web/commit/c3867af7b77dfae3580ab63a5d5c9e8452f2da62)]:
+  - @spark-web/box@1.0.7
+  - @spark-web/heading@2.0.2
+  - @spark-web/text@1.0.7
+  - @spark-web/theme@3.0.3
+  - @spark-web/utils@1.2.0
+
 ## 1.0.7
 
 ### Patch Changes

@@ -1,5 +1,28 @@
 # @spark-web/float-input
 
+## 1.0.4
+
+### Patch Changes
+
+- [#173](https://github.com/brighte-labs/spark-web/pull/173)
+  [`90b7e9c`](https://github.com/brighte-labs/spark-web/commit/90b7e9cf4eb7e864d765c74b22c3dedf3d262e25)
+  Thanks [@lukebennett88](https://github.com/lukebennett88)! - Update babel
+  dependency
+
+* [#178](https://github.com/brighte-labs/spark-web/pull/178)
+  [`c3867af`](https://github.com/brighte-labs/spark-web/commit/c3867af7b77dfae3580ab63a5d5c9e8452f2da62)
+  Thanks [@lukebennett88](https://github.com/lukebennett88)! - Switch from using
+  `:invalid` pseudo-class to using data-attribute for invalid styles of inputs
+* Updated dependencies
+  [[`90b7e9c`](https://github.com/brighte-labs/spark-web/commit/90b7e9cf4eb7e864d765c74b22c3dedf3d262e25),
+  [`c3867af`](https://github.com/brighte-labs/spark-web/commit/c3867af7b77dfae3580ab63a5d5c9e8452f2da62)]:
+  - @spark-web/field@3.0.3
+  - @spark-web/icon@1.1.5
+  - @spark-web/inline@1.0.7
+  - @spark-web/stack@1.0.7
+  - @spark-web/text-input@2.0.1
+  - @spark-web/text@1.0.7
+
 ## 1.0.3
 
 ### Patch Changes
