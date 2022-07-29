@@ -10,7 +10,12 @@ export type BaseButtonProps = NativeButtonProps & Partial<BoxProps>;
 
 export const BaseButton = forwardRef<HTMLButtonElement, BaseButtonProps>(
   (
-    { onClick: onClickProp, disabled = false, type = 'button', ...rest },
+    {
+      onClick: onClickProp,
+      disabled = false,
+      type = 'button',
+      ...consumerProps
+    },
     forwardedRef
   ) => {
     const internalRef = useRef<HTMLButtonElement>(null);
@@ -35,10 +40,11 @@ export const BaseButton = forwardRef<HTMLButtonElement, BaseButtonProps>(
 
     return (
       <Box
+        {...consumerProps}
         as="button"
-        {...rest}
-        onClick={onClick}
         ref={composedRef}
+        aria-disabled={disabled}
+        onClick={onClick}
         type={type}
       />
     );

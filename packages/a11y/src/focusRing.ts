@@ -40,6 +40,7 @@ export type BackgroundTone = keyof Pick<
   | 'info'
   | 'neutral'
   | 'positive'
+  | 'disabled'
 >;
 
 type FocusRingProps = {

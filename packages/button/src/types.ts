@@ -7,7 +7,7 @@ import type { mapTokens } from './utils';
 
 export type ButtonSize = keyof typeof mapTokens[keyof typeof mapTokens];
 export type ButtonProminence = 'high' | 'low' | 'none';
-export type ButtonTone = BackgroundTone;
+export type ButtonTone = Exclude<BackgroundTone, 'disabled'>;
 
 type ChildrenWithText = {
   label?: never;

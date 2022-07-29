@@ -21,10 +21,11 @@ export function useButtonStyles({
 }: UseButtonStylesProps) {
   const theme = useTheme();
   const focusRingStyles = useFocusRing({ tone });
+  const disabledFocusRingStyles = useFocusRing({ tone: 'disabled' });
   const variant = variants[prominence][tone];
   const isLarge = size === 'large';
 
-  const transitionColours = {
+  const transitionColors = {
     transitionProperty:
       'color, background-color, border-color, text-decoration-color',
     transitionTimingFunction: 'cubic-bezier(0.02, 1.505, 0.745, 1.235)',
@@ -47,48 +48,73 @@ export function useButtonStyles({
     width: iconOnly ? mapTokens.size[size] : undefined,
     // interactions styles
     className: css({
-      ...transitionColours,
+      ...transitionColors,
 
-      '&:hover': {
-        borderColor: variant?.borderHover
-          ? theme.border.color[variant.borderHover]
-          : undefined,
-        backgroundColor: variant?.backgroundHover
-          ? theme.backgroundInteractions[variant.backgroundHover]
-          : undefined,
-
-        // Style button text when hovering
-        '> *': {
-          ...transitionColours,
-          color: variant?.textToneHover
-            ? theme.color.foreground[variant.textToneHover]
+      '&:not([aria-disabled=true])': {
+        ':hover': {
+          borderColor: variant?.borderHover
+            ? theme.border.color[variant.borderHover]
             : undefined,
-          stroke: variant?.textToneHover
-            ? theme.color.foreground[variant.textToneHover]
+          backgroundColor: variant?.backgroundHover
+            ? theme.backgroundInteractions[variant.backgroundHover]
+            : undefined,
+
+          // Style button text when hovering
+          '> *': {
+            ...transitionColors,
+            color: variant?.textToneHover
+              ? theme.color.foreground[variant.textToneHover]
+              : undefined,
+            stroke: variant?.textToneHover
+              ? theme.color.foreground[variant.textToneHover]
+              : undefined,
+          },
+        },
+
+        ':active': {
+          borderColor: variant?.borderActive
+            ? theme.border.color[variant.borderActive]
+            : undefined,
+          backgroundColor: variant?.backgroundActive
+            ? theme.backgroundInteractions[variant?.backgroundActive]
+            : undefined,
+          transform: 'scale(0.98)',
+
+          // Style button text when it's active
+          '> *': {
+            ...transitionColors,
+            color: variant?.textToneActive
+              ? theme.color.foreground[variant.textToneActive]
+              : undefined,
+            stroke: variant?.textToneActive
+              ? theme.color.foreground[variant.textToneActive]
+              : undefined,
+          },
+        },
+
+        ':focus': focusRingStyles,
+      },
+
+      '&[aria-disabled=true]': {
+        backgroundColor: variant?.backgroundDisabled
+          ? theme.color.background[variant?.backgroundDisabled]
+          : undefined,
+
+        borderColor: variant?.borderDisabled
+          ? theme.border.color[variant.borderDisabled]
+          : undefined,
+
+        '*': {
+          color: variant?.textToneDisabled
+            ? theme.color.foreground[variant.textToneDisabled]
+            : undefined,
+          stroke: variant?.textToneDisabled
+            ? theme.color.foreground[variant.textToneDisabled]
             : undefined,
         },
-      },
-      '&:active': {
-        borderColor: variant?.borderActive
-          ? theme.border.color[variant.borderActive]
-          : undefined,
-        backgroundColor: variant?.backgroundActive
-          ? theme.backgroundInteractions[variant?.backgroundActive]
-          : undefined,
-        transform: 'scale(0.98)',
 
-        // Style button text when it's active
-        '> *': {
-          ...transitionColours,
-          color: variant?.textToneActive
-            ? theme.color.foreground[variant.textToneActive]
-            : undefined,
-          stroke: variant?.textToneActive
-            ? theme.color.foreground[variant.textToneActive]
-            : undefined,
-        },
+        ':focus': disabledFocusRingStyles,
       },
-      ':focus': focusRingStyles,
     }),
   };
 

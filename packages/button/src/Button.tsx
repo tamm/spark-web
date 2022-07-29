@@ -81,7 +81,6 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         {...buttonStyleProps}
         aria-controls={ariaControls}
         aria-describedby={ariaDescribedBy}
-        aria-disabled={isDisabled}
         aria-expanded={ariaExpanded}
         aria-label={props.label}
         data={data}
