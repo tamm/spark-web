@@ -1,5 +1,20 @@
 # @spark-web/alert
 
+## 2.1.0
+
+### Minor Changes
+
+- [#186](https://github.com/brighte-labs/spark-web/pull/186)
+  [`95d7c7b`](https://github.com/brighte-labs/spark-web/commit/95d7c7b374bf65915193d81da33f073f63ec6004)
+  Thanks [@lukebennett88](https://github.com/lukebennett88)! - Add paddingRight
+  to text container when there is no close button
+
+### Patch Changes
+
+- Updated dependencies
+  [[`82413df`](https://github.com/brighte-labs/spark-web/commit/82413df8f27ba2508911d0edb4380d3d366c75c0)]:
+  - @spark-web/button@1.3.1
+
 ## 2.0.0
 
 ### Major Changes

@@ -1,5 +1,14 @@
 # @spark-web/button
 
+## 1.3.1
+
+### Patch Changes
+
+- [#185](https://github.com/brighte-labs/spark-web/pull/185)
+  [`82413df`](https://github.com/brighte-labs/spark-web/commit/82413df8f27ba2508911d0edb4380d3d366c75c0)
+  Thanks [@lukebennett88](https://github.com/lukebennett88)! - Remove "cursor:
+  pointer" when buttons are disabled
+
 ## 1.3.0
 
 ### Minor Changes
