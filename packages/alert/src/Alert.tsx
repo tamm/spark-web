@@ -52,7 +52,6 @@ export function Alert({
   tone = 'info',
 }: AlertProps) {
   const Icon = icon || toneToIcon[tone];
-  const iconSize = 'xsmall';
 
   return (
     <Row
@@ -69,12 +68,12 @@ export function Alert({
         alignY="top"
         gap="medium"
         padding="large"
-        paddingRight="none"
+        paddingRight={onClose ? 'none' : undefined}
         width="full"
         style={{ minWidth: 0 }}
       >
         <IconWrapper>
-          <Icon size={iconSize} tone={tone} />
+          <Icon size="xsmall" tone={tone} />
         </IconWrapper>
         <Stack flex={1} gap="medium">
           {heading && <Text weight="semibold">{heading}</Text>}
