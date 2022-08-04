@@ -104,6 +104,8 @@ export function useButtonStyles({
           ? theme.border.color[variant.borderDisabled]
           : undefined,
 
+        cursor: 'default',
+
         '*': {
           color: variant?.textToneDisabled
             ? theme.color.foreground[variant.textToneDisabled]
