@@ -5,8 +5,7 @@ import {
   Root as RadixTabs,
   Trigger as RadixTab,
 } from '@radix-ui/react-tabs';
-import { useFocusRing } from '@spark-web/a11y';
-import { BaseButton } from '@spark-web/button';
+import { BaseButton, useButtonStyles } from '@spark-web/button';
 import { Divider } from '@spark-web/divider';
 import { Inline } from '@spark-web/inline';
 import { Stack } from '@spark-web/stack';
@@ -241,25 +240,31 @@ export type TabPanelProps = {
  */
 function useTabStyles() {
   const theme = useTheme();
-  const focusStyles = useFocusRing();
+  const [boxProps, buttonStyles] = useButtonStyles({
+    iconOnly: false,
+    prominence: 'none',
+    size: 'medium',
+    tone: 'primary',
+  });
 
   return [
     {
-      borderRadius: 'small',
-      cursor: 'pointer',
+      ...boxProps,
       paddingX: 'xlarge',
-      paddingY: 'medium',
-      position: 'relative',
     },
     {
-      ':focus': focusStyles,
-      ':hover': { background: theme.color.background.surfaceMuted },
+      ...buttonStyles,
       '&[data-state=active]': {
-        '*': {
-          color: theme.color.foreground.primaryActive,
-          fontWeight: theme.typography.fontWeight.semibold,
+        '&:not([aria-disabled=true])': {
+          ':hover': { background: theme.color.background.primaryMuted },
+          '*': {
+            color: theme.color.foreground.primaryActive,
+            fontWeight: theme.typography.fontWeight.semibold,
+          },
         },
-        ':hover': { background: theme.color.background.primaryMuted },
+        ':active': {
+          transform: 'none',
+        },
         // Pseudo border
         '::after': {
           content: '""',

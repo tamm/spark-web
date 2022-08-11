@@ -1,7 +1,7 @@
+import { css } from '@emotion/css';
 import { Box } from '@spark-web/box';
 import type { LinkComponentProps } from '@spark-web/link';
 import { useLinkComponent } from '@spark-web/link';
-import { buildDataAttributes } from '@spark-web/utils/internal';
 import { forwardRefWithAs } from '@spark-web/utils/ts';
 
 import { resolveButtonChildren } from './resolveButtonChildren';
@@ -20,13 +20,13 @@ export const ButtonLink = forwardRefWithAs<'a', ButtonLinkProps>(
       prominence = 'high',
       size = 'medium',
       tone = 'primary',
-      ...props
+      ...consumerProps
     },
-    ref
+    forwardedRef
   ) => {
-    const LinkComponent = useLinkComponent(ref);
-    const iconOnly = Boolean(props.label);
-    const buttonStyleProps = useButtonStyles({
+    const LinkComponent = useLinkComponent(forwardedRef);
+    const iconOnly = Boolean(consumerProps.label);
+    const [boxProps, buttonStyles] = useButtonStyles({
       iconOnly,
       prominence,
       size,
@@ -35,17 +35,18 @@ export const ButtonLink = forwardRefWithAs<'a', ButtonLinkProps>(
 
     return (
       <Box
-        aria-label={props.label}
+        {...boxProps}
+        aria-label={consumerProps.label}
         as={LinkComponent}
         asElement="a"
-        id={id}
+        className={css(buttonStyles)}
+        data={data}
         href={href}
-        ref={ref}
-        {...buttonStyleProps}
-        {...(data ? buildDataAttributes(data) : undefined)}
+        id={id}
+        ref={forwardedRef}
       >
         {resolveButtonChildren({
-          ...props,
+          ...consumerProps,
           isLoading: false,
           prominence,
           size,

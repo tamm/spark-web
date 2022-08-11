@@ -1,3 +1,4 @@
+import { css } from '@emotion/css';
 import { BaseButton } from '@spark-web/button';
 import { useFieldContext } from '@spark-web/field';
 import { EyeIcon, EyeOffIcon } from '@spark-web/icon';
@@ -15,7 +16,7 @@ export const PasswordInput = forwardRef<HTMLInputElement, PasswordInputProps>(
     const [showPassword, setShowPassword] = useState(false);
 
     const toggleShowPassword = () => setShowPassword(!showPassword);
-    const iconButtonStyles = useIconButtonStyles();
+    const [boxProps, buttonStyles] = useIconButtonStyles();
     const Icon = showPassword ? EyeOffIcon : EyeIcon;
 
     return (
@@ -27,12 +28,17 @@ export const PasswordInput = forwardRef<HTMLInputElement, PasswordInputProps>(
       >
         <InputAdornment placement="end">
           <BaseButton
-            {...iconButtonStyles}
+            {...boxProps}
             aria-checked={showPassword}
             aria-label={`${showPassword ? 'Hide' : 'Show'} password`}
+            className={css(buttonStyles)}
             disabled={disabled}
             onClick={toggleShowPassword}
             role="switch"
+            // The input is not keyboard navigable when disabled and so we are
+            // also removing the button from the tab index to make it less
+            // confusing to keyboard and assitive technology users.
+            tabIndex={disabled ? -1 : undefined}
           >
             <Icon tone={disabled ? 'disabled' : 'neutral'} />
           </BaseButton>

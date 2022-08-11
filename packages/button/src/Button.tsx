@@ -1,3 +1,4 @@
+import { css } from '@emotion/css';
 import { VisuallyHidden } from '@spark-web/a11y';
 import { Box } from '@spark-web/box';
 import type { IconProps } from '@spark-web/icon';
@@ -64,7 +65,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     forwardedRef
   ) => {
     const iconOnly = Boolean(props.label);
-    const buttonStyleProps = useButtonStyles({
+    const [boxProps, buttonStyles] = useButtonStyles({
       iconOnly,
       size,
       tone,
@@ -78,11 +79,12 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 
     return (
       <BaseButton
-        {...buttonStyleProps}
+        {...boxProps}
         aria-controls={ariaControls}
         aria-describedby={ariaDescribedBy}
         aria-expanded={ariaExpanded}
         aria-label={props.label}
+        className={css(buttonStyles)}
         data={data}
         disabled={isDisabled}
         id={id}

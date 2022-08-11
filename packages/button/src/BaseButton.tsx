@@ -43,7 +43,8 @@ export const BaseButton = forwardRef<HTMLButtonElement, BaseButtonProps>(
         {...consumerProps}
         as="button"
         ref={composedRef}
-        aria-disabled={disabled}
+        // Hide aria-disabled attribute when button is not disabled
+        aria-disabled={disabled || undefined}
         onClick={onClick}
         type={type}
       />
