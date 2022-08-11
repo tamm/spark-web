@@ -1,139 +1,133 @@
 import '@testing-library/jest-dom';
 
-import { Field, useFieldContext } from '@spark-web/field';
-import type { DataAttributeMap } from '@spark-web/utils/internal';
-import { cleanup, fireEvent, render, screen } from '@testing-library/react';
+import { Field } from '@spark-web/field';
+import { render } from '@testing-library/react';
 
-import type { OptionsOrGroups } from './Select';
 import { Select } from './Select';
 
-jest.mock('@spark-web/field', () => {
-  const original = jest.requireActual('@spark-web/field');
-  return {
-    ...original,
-    useFieldContext: jest.fn(),
-  };
-});
+const LABEL = 'Test label';
+const DESCRIPTION = 'Test description';
+const MESSAGE = 'Test message';
+const PLACEHOLDER = 'Test placeholder';
+const OPTIONS = [
+  {
+    label: 'Label 1',
+    value: 'value-1',
+  },
+  {
+    label: 'Label 2',
+    value: 'value-2',
+  },
+  {
+    label: 'Label 3',
+    value: 'value-3',
+  },
+];
 
-const useFieldContextMock = useFieldContext as jest.Mock;
-
-const renderComponent = ({
-  options,
-  name,
-  placeholder,
-  data,
-}: {
-  options: OptionsOrGroups;
-  name: string;
-  placeholder?: string;
-  data?: DataAttributeMap;
-}) =>
-  render(
-    <Field label={name}>
-      <Select
-        options={options}
-        {...(placeholder && { placeholder })}
-        {...(data && { data })}
-      />
-    </Field>
-  );
-
-describe('Select component', () => {
-  const name = 'test select';
-  beforeEach(() => {
-    useFieldContextMock.mockReturnValue([
-      {
-        disabled: false,
-        invalid: false,
-      },
-      { 'aria-label': name },
-    ]);
+describe('Select', () => {
+  it('associates field with label correctly', () => {
+    const { getByLabelText } = render(
+      <Field label={LABEL}>
+        <Select options={OPTIONS} />
+      </Field>
+    );
+    expect(getByLabelText(LABEL).tagName).toBe('SELECT');
   });
 
-  afterEach(cleanup);
-
-  it('should display select label', () => {
-    renderComponent({ options: [], name });
-    screen.getByText(name);
+  it('associates field with description correctly', () => {
+    const { getByRole, getByText } = render(
+      <Field label={LABEL} description={DESCRIPTION}>
+        <Select options={OPTIONS} />
+      </Field>
+    );
+    const description = getByText(DESCRIPTION);
+    const select = getByRole('combobox');
+    expect(select.getAttribute('aria-describedby')).toBe(description.id);
+    expect(select).toHaveAccessibleDescription(DESCRIPTION);
   });
 
-  it('should display placeholder with empty value and disabled', () => {
-    const placeholder = 'select placeholder';
-    renderComponent({ options: [], name, placeholder });
-    const placeholderOption = screen.getByRole('option', {
-      name: placeholder,
-    }) as HTMLOptionElement;
-    expect(placeholderOption.selected).toBe(true);
-    expect(placeholderOption.value).toBe('');
-    expect(placeholderOption).toBeDisabled();
+  it('associates field with message correctly', () => {
+    const { getByRole, getByText } = render(
+      <Field label={LABEL} message={MESSAGE}>
+        <Select options={OPTIONS} />
+      </Field>
+    );
+    const message = getByText(MESSAGE);
+    const select = getByRole('combobox');
+    expect(select.getAttribute('aria-describedby')).toBe(message.id);
+    expect(select).toHaveAccessibleDescription(MESSAGE);
   });
 
-  it('should have options to select', () => {
-    const options = [
-      { label: 'foo', value: 'bar' },
-      { label: 'foo1', value: 'bar1' },
-      { label: 'foo2', value: 'bar2' },
-    ];
-    renderComponent({ options, name });
-    expect(
-      (screen.getByRole('option', { name: 'foo' }) as HTMLOptionElement)
-        .selected
-    ).toBe(true);
+  it('field is not marked as having a description without a message or description', () => {
+    const { getByLabelText } = render(
+      <Field label={LABEL}>
+        <Select options={OPTIONS} />
+      </Field>
+    );
 
-    fireEvent.change(screen.getByLabelText(name), {
-      target: { value: 'bar1' },
-    });
-    expect(
-      (screen.getByRole('option', { name: 'foo1' }) as HTMLOptionElement)
-        .selected
-    ).toBe(true);
-
-    fireEvent.change(screen.getByLabelText(name), {
-      target: { value: 'bar2' },
-    });
-    expect(
-      (screen.getByRole('option', { name: 'foo2' }) as HTMLOptionElement)
-        .selected
-    ).toBe(true);
+    expect(getByLabelText(LABEL).getAttribute('aria-describedby')).toBeNull();
   });
 
-  it('should have attributes built by data', () => {
-    const data = { foo: 'bar', foo1: 'bar1' };
+  it("field has placeholder option selected when option isn't selected", () => {
+    const { getByLabelText } = render(
+      <Field label={LABEL}>
+        <Select options={OPTIONS} placeholder={PLACEHOLDER} />
+      </Field>
+    );
 
-    renderComponent({ data, name, options: [] });
-    expect(screen.getByLabelText(name)).toHaveAttribute('data-foo', 'bar');
-    expect(screen.getByLabelText(name)).toHaveAttribute('data-foo1', 'bar1');
+    const select = getByLabelText(LABEL) as HTMLSelectElement;
+
+    expect(select.selectedIndex).toBe(0);
+    expect(select.options.length).toEqual(OPTIONS.length + 1);
+
+    const placeholderOption = select.options[0];
+    expect(placeholderOption.text).toEqual(PLACEHOLDER);
+    expect(placeholderOption.value).toEqual('');
+    expect(placeholderOption.disabled).toEqual(true);
+
+    expect(select.options[1].text).toEqual(OPTIONS[0].label);
   });
 
-  it('should be disabled by field context', () => {
-    useFieldContextMock.mockReturnValue([
-      {
-        disabled: true,
-        invalid: true,
-      },
-      { 'aria-label': name },
-    ]);
-    renderComponent({ name, options: [] });
-    expect(screen.getByLabelText(name)).toBeDisabled();
+  it('field still shows disabled placeholder option when another option is selected', () => {
+    const { getByLabelText } = render(
+      <Field label={LABEL}>
+        <Select
+          options={OPTIONS}
+          placeholder={PLACEHOLDER}
+          value={OPTIONS[0].value}
+          onChange={() => null}
+        />
+      </Field>
+    );
+
+    const select = getByLabelText(LABEL) as HTMLSelectElement;
+
+    expect(select.selectedIndex).toBe(1);
+    expect(select.options.length).toEqual(OPTIONS.length + 1);
+
+    const placeholderOption = select.options[0];
+    expect(placeholderOption.text).toEqual(PLACEHOLDER);
+    expect(placeholderOption.value).toEqual('');
+    expect(placeholderOption.disabled).toEqual(true);
+
+    expect(select.options[1].text).toEqual(OPTIONS[0].label);
   });
 
-  it('should have option in optGroup', () => {
-    const optGroupOption = { label: 'foo1-0', value: 'bar1-0' };
-    const options = [
-      { label: 'foo', value: 'bar' },
-      {
-        label: 'foo1',
-        value: 'bar1',
-        options: [optGroupOption],
-      },
-    ];
-    renderComponent({ name, options });
-    expect(
-      (
-        screen.getByRole('option', {
-          name: optGroupOption.label,
-        }) as HTMLOptionElement
-      ).value
-    ).toBe(optGroupOption.value);
+  it('field should be missing blank option when an option is selected', () => {
+    const { getByLabelText } = render(
+      <Field label={LABEL}>
+        <Select
+          options={OPTIONS}
+          value={OPTIONS[0].value}
+          onChange={() => null}
+        />
+      </Field>
+    );
+
+    const select = getByLabelText(LABEL) as HTMLSelectElement;
+
+    expect(select.selectedIndex).toBe(0);
+    expect(select.options.length).toEqual(OPTIONS.length);
+    expect(select.options[0].text).toEqual(OPTIONS[0].label);
   });
 });

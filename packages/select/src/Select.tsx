@@ -86,11 +86,11 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(
           value={value}
           width="full"
         >
-          {placeholder && (
+          {!value || placeholder ? (
             <option value="" disabled>
               {placeholder}
             </option>
-          )}
+          ) : null}
           {optionsOrGroups.map(optionOrGroup => {
             if ('options' in optionOrGroup) {
               return (
