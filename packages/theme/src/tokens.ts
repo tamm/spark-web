@@ -256,6 +256,15 @@ export const defaultTokens = {
       positiveLow: colors.green[100],
       positiveMuted: colors.green[50],
     },
+    status: {
+      // tones for statuses can be either foreground or background
+      accent: '#8b5cf6',
+      caution: colors.yellow[500],
+      critical: colors.red[500],
+      info: colors.blue[500],
+      neutral: colors.neutral[700],
+      positive: colors.green[500],
+    },
   },
   backgroundInteractions: {
     none: colors.neutral[0],
