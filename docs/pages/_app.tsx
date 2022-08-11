@@ -48,6 +48,15 @@ App.getInitialProps = async () => {
         ],
       },
       {
+        name: 'Reference',
+        children: [
+          {
+            name: 'Colours',
+            href: '/colours',
+          },
+        ],
+      },
+      {
         name: 'Components',
         children: allPackages
           .filter(({ slug }) => !ignorePackages.includes(slug))

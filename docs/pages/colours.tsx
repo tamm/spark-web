@@ -52,6 +52,7 @@ export default function Packages(): JSX.Element {
   return (
     <DocsContent pageTitle="Colours" includeNavigation toc={colors}>
       <Stack gap="xlarge">
+        <Heading level="1">Colours</Heading>
         {colors.map(({ colors, slug, title }) => (
           <Stack key={slug} gap="xlarge">
             <Heading id={slug} level="2">
