@@ -82,7 +82,6 @@
     "chokidar": "^3.5.3",
     "contentlayer": "^0.2.6",
     "date-fns": "^2.29.1",
-    "next-compose-plugins": "^2.2.1",
     "next-contentlayer": "^0.2.6",
     "playroom": "^0.28.0",
     "postcss": "^8.4.14",
