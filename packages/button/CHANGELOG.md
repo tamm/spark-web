@@ -1,5 +1,25 @@
 # @spark-web/button
 
+## 1.4.0
+
+### Minor Changes
+
+- [#188](https://github.com/brighte-labs/spark-web/pull/188)
+  [`891f839`](https://github.com/brighte-labs/spark-web/commit/891f839c5a5608d771183189cb12116a60f66209)
+  Thanks [@lukebennett88](https://github.com/lukebennett88)! - Move
+  aria-disabled logic from Button onto underlying BaseButton
+
+* [#188](https://github.com/brighte-labs/spark-web/pull/188)
+  [`891f839`](https://github.com/brighte-labs/spark-web/commit/891f839c5a5608d771183189cb12116a60f66209)
+  Thanks [@lukebennett88](https://github.com/lukebennett88)! - Export
+  useButtonStyles hook
+
+### Patch Changes
+
+- Updated dependencies
+  [[`7b0cfdf`](https://github.com/brighte-labs/spark-web/commit/7b0cfdf6fb4d32b86e00050d8869ac2b9787cf41)]:
+  - @spark-web/theme@3.0.4
+
 ## 1.3.1
 
 ### Patch Changes

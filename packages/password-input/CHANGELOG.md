@@ -1,5 +1,21 @@
 # @spark-web/password-input
 
+## 1.0.4
+
+### Patch Changes
+
+- [#188](https://github.com/brighte-labs/spark-web/pull/188)
+  [`891f839`](https://github.com/brighte-labs/spark-web/commit/891f839c5a5608d771183189cb12116a60f66209)
+  Thanks [@lukebennett88](https://github.com/lukebennett88)! - Update button
+  styles
+
+- Updated dependencies
+  [[`891f839`](https://github.com/brighte-labs/spark-web/commit/891f839c5a5608d771183189cb12116a60f66209),
+  [`7b0cfdf`](https://github.com/brighte-labs/spark-web/commit/7b0cfdf6fb4d32b86e00050d8869ac2b9787cf41),
+  [`891f839`](https://github.com/brighte-labs/spark-web/commit/891f839c5a5608d771183189cb12116a60f66209)]:
+  - @spark-web/button@1.4.0
+  - @spark-web/theme@3.0.4
+
 ## 1.0.3
 
 ### Patch Changes

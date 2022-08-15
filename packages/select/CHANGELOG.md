@@ -1,5 +1,18 @@
 # @spark-web/select
 
+## 1.0.10
+
+### Patch Changes
+
+- [#184](https://github.com/brighte-labs/spark-web/pull/184)
+  [`6d68601`](https://github.com/brighte-labs/spark-web/commit/6d68601d1d7ac6b7de9c388f286d523935a98ea0)
+  Thanks [@lukebennett88](https://github.com/lukebennett88)! - Enable Select to
+  have a blank option selected when value is blank
+
+- Updated dependencies
+  [[`7b0cfdf`](https://github.com/brighte-labs/spark-web/commit/7b0cfdf6fb4d32b86e00050d8869ac2b9787cf41)]:
+  - @spark-web/theme@3.0.4
+
 ## 1.0.9
 
 ### Patch Changes

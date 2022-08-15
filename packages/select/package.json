@@ -1,6 +1,6 @@
 {
   "name": "@spark-web/select",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "license": "MIT",
   "main": "dist/spark-web-select.cjs.js",
   "module": "dist/spark-web-select.esm.js",
@@ -13,7 +13,7 @@
     "@spark-web/box": "^1.0.7",
     "@spark-web/icon": "^1.1.5",
     "@spark-web/text-input": "^2.0.1",
-    "@spark-web/theme": "^3.0.3"
+    "@spark-web/theme": "^3.0.4"
   },
   "devDependencies": {
     "@spark-web/field": "^3.0.3",
