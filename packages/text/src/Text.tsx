@@ -49,7 +49,7 @@ export const Text = forwardRefWithAs<'div', TextProps>(
       data,
       id,
 
-      //text props
+      // text props
       align,
       baseline: baselineProp,
       inline,
@@ -59,6 +59,9 @@ export const Text = forwardRefWithAs<'div', TextProps>(
       tone: toneProp,
       transform,
       weight: weightProp,
+
+      // consumer props
+      ...consumerProps
     },
     forwardedRef
   ) => {
@@ -85,6 +88,7 @@ export const Text = forwardRefWithAs<'div', TextProps>(
     if (inline) {
       return (
         <Box
+          {...consumerProps}
           as={as ?? 'span'}
           data={data}
           ref={forwardedRef}
@@ -110,6 +114,7 @@ export const Text = forwardRefWithAs<'div', TextProps>(
     return (
       <TextContext.Provider value={textContextValue}>
         <Box
+          {...consumerProps}
           as={as}
           data={data}
           ref={forwardedRef}

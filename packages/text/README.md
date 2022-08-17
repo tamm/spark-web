@@ -151,6 +151,8 @@ tones “neutral” and “muted” will be inverted.
 | transform?        | CSSProperties['textTransform']                                  |         | Transforms the text casing.                                                  |
 | weight?           | keyof [BrighteTheme][brighte-theme]['typography']['fontweight'] |         | The weight of the text.                                                      |
 
+Extra props are also passed into the underlying [`Box`](/package/box) component.
+
 [brighte-theme]:
   https://github.com/brighte-labs/spark-web/blob/e503bea4f7668d187ec7a78f99c5ed374417588b/packages/theme/src/makeTheme.ts#L158
 [data-attribute-map]:
