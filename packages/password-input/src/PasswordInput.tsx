@@ -8,7 +8,10 @@ import { forwardRef, useState } from 'react';
 
 import { useIconButtonStyles } from './useIconButtonStyles';
 
-export type PasswordInputProps = Omit<TextInputProps, 'children' | 'inputMode'>;
+export type PasswordInputProps = Omit<
+  TextInputProps,
+  'children' | 'inputMode' | 'type'
+>;
 
 export const PasswordInput = forwardRef<HTMLInputElement, PasswordInputProps>(
   (props, forwardedRef) => {
