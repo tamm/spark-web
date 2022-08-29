@@ -1,5 +1,24 @@
 # @spark-web/float-input
 
+## 1.0.5
+
+### Patch Changes
+
+- [#197](https://github.com/brighte-labs/spark-web/pull/197)
+  [`94016d8`](https://github.com/brighte-labs/spark-web/commit/94016d84e26bbe55833bbcbab847a2cce6041538)
+  Thanks [@lukebennett88](https://github.com/lukebennett88)! - Update packages
+
+- Updated dependencies
+  [[`9ff0c4b`](https://github.com/brighte-labs/spark-web/commit/9ff0c4b4cc83e0e1ab609d0bcdb01458b654263e),
+  [`07286b5`](https://github.com/brighte-labs/spark-web/commit/07286b52f897909b1a806d736e1040351c93078f),
+  [`94016d8`](https://github.com/brighte-labs/spark-web/commit/94016d84e26bbe55833bbcbab847a2cce6041538)]:
+  - @spark-web/text@1.1.0
+  - @spark-web/icon@1.2.0
+  - @spark-web/field@3.0.4
+  - @spark-web/inline@1.0.8
+  - @spark-web/stack@1.0.8
+  - @spark-web/text-input@2.0.2
+
 ## 1.0.4
 
 ### Patch Changes

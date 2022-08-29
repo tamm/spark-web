@@ -1,5 +1,20 @@
 # @spark-web/stack
 
+## 1.0.8
+
+### Patch Changes
+
+- [#197](https://github.com/brighte-labs/spark-web/pull/197)
+  [`94016d8`](https://github.com/brighte-labs/spark-web/commit/94016d84e26bbe55833bbcbab847a2cce6041538)
+  Thanks [@lukebennett88](https://github.com/lukebennett88)! - Update packages
+
+- Updated dependencies
+  [[`94016d8`](https://github.com/brighte-labs/spark-web/commit/94016d84e26bbe55833bbcbab847a2cce6041538)]:
+  - @spark-web/box@1.0.8
+  - @spark-web/divider@1.0.8
+  - @spark-web/theme@3.0.5
+  - @spark-web/utils@1.2.1
+
 ## 1.0.7
 
 ### Patch Changes

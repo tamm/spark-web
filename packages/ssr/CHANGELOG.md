@@ -1,5 +1,13 @@
 # @spark-web/ssr
 
+## 1.0.7
+
+### Patch Changes
+
+- [#197](https://github.com/brighte-labs/spark-web/pull/197)
+  [`94016d8`](https://github.com/brighte-labs/spark-web/commit/94016d84e26bbe55833bbcbab847a2cce6041538)
+  Thanks [@lukebennett88](https://github.com/lukebennett88)! - Update packages
+
 ## 1.0.6
 
 ### Patch Changes

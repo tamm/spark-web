@@ -1,5 +1,23 @@
 # @spark-web/nav-link
 
+## 1.1.7
+
+### Patch Changes
+
+- [#197](https://github.com/brighte-labs/spark-web/pull/197)
+  [`94016d8`](https://github.com/brighte-labs/spark-web/commit/94016d84e26bbe55833bbcbab847a2cce6041538)
+  Thanks [@lukebennett88](https://github.com/lukebennett88)! - Update packages
+
+- Updated dependencies
+  [[`51b6c7a`](https://github.com/brighte-labs/spark-web/commit/51b6c7a43f441e02b90403b13af9cfa11e5438ef),
+  [`9ff0c4b`](https://github.com/brighte-labs/spark-web/commit/9ff0c4b4cc83e0e1ab609d0bcdb01458b654263e),
+  [`94016d8`](https://github.com/brighte-labs/spark-web/commit/94016d84e26bbe55833bbcbab847a2cce6041538)]:
+  - @spark-web/a11y@1.3.0
+  - @spark-web/text@1.1.0
+  - @spark-web/box@1.0.8
+  - @spark-web/link@1.0.8
+  - @spark-web/theme@3.0.5
+
 ## 1.1.6
 
 ### Patch Changes

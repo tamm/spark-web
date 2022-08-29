@@ -1,5 +1,22 @@
 # @spark-web/spinner
 
+## 1.0.6
+
+### Patch Changes
+
+- [#197](https://github.com/brighte-labs/spark-web/pull/197)
+  [`94016d8`](https://github.com/brighte-labs/spark-web/commit/94016d84e26bbe55833bbcbab847a2cce6041538)
+  Thanks [@lukebennett88](https://github.com/lukebennett88)! - Update packages
+
+- Updated dependencies
+  [[`51b6c7a`](https://github.com/brighte-labs/spark-web/commit/51b6c7a43f441e02b90403b13af9cfa11e5438ef),
+  [`07286b5`](https://github.com/brighte-labs/spark-web/commit/07286b52f897909b1a806d736e1040351c93078f),
+  [`94016d8`](https://github.com/brighte-labs/spark-web/commit/94016d84e26bbe55833bbcbab847a2cce6041538)]:
+  - @spark-web/a11y@1.3.0
+  - @spark-web/icon@1.2.0
+  - @spark-web/box@1.0.8
+  - @spark-web/utils@1.2.1
+
 ## 1.0.5
 
 ### Patch Changes
