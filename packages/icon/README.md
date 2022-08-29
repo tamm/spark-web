@@ -59,11 +59,14 @@ foreground tones “neutral” and “muted” will be inverted.
 
 ## Props
 
-| Prop  | Type                              | Default   | Description                |
-| ----- | --------------------------------- | --------- | -------------------------- |
-| size? | [SizeType][size-type]             | 'small'   | Sets the size of the icon. |
-| tone? | [ForegroundTone][foreground-tone] | 'neutral' | Sets the tone of the icon. |
+| Prop  | Type                                   | Default   | Description                            |
+| ----- | -------------------------------------- | --------- | -------------------------------------- |
+| data? | [DataAttributeMap][data-attribute-map] |           | Sets data attributes on the component. |
+| size? | [SizeType][size-type]                  | 'small'   | Sets the size of the icon.             |
+| tone? | [ForegroundTone][foreground-tone]      | 'neutral' | Sets the tone of the icon.             |
 
+[data-attribute-map]:
+  https://github.com/brighte-labs/spark-web/blob/e7f6f4285b4cfd876312cc89fbdd094039aa239a/packages/utils/src/internal/buildDataAttributes.ts#L1
 [size-type]:
   https://github.com/brighte-labs/spark-web/blob/11e73659ff4a01a48a8761821bff34c6ec28568b/packages/icon/src/createIcon.tsx#L9
 [foreground-tone]:

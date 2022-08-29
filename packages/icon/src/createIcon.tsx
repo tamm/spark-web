@@ -3,12 +3,16 @@ import type { ForegroundTone } from '@spark-web/text';
 import { useForegroundTone } from '@spark-web/text';
 import type { BrighteTheme } from '@spark-web/theme';
 import { useTheme } from '@spark-web/theme';
+import type { DataAttributeMap } from '@spark-web/utils/internal';
+import { buildDataAttributes } from '@spark-web/utils/internal';
 import type { ReactNode } from 'react';
 import { forwardRef, useMemo } from 'react';
 
 type SizeType = Exclude<keyof BrighteTheme['sizing'], 'full' | 'none'>;
 
 export type IconProps = {
+  /** Map of data attributes. */
+  data?: DataAttributeMap;
   /** The size of the icon. */
   size?: SizeType;
   /** The tone of the icon. */
@@ -17,7 +21,7 @@ export type IconProps = {
 
 export const createIcon = (children: ReactNode, name: string) => {
   const Icon = forwardRef<SVGSVGElement, IconProps>(
-    ({ size: sizeKey = 'small', tone = 'neutral' }, forwardedRef) => {
+    ({ data, size: sizeKey = 'small', tone = 'neutral' }, forwardedRef) => {
       const {
         sizing,
         utils: { resolveResponsiveProps },
@@ -41,6 +45,7 @@ export const createIcon = (children: ReactNode, name: string) => {
 
       return (
         <svg
+          {...(data ? buildDataAttributes(data) : undefined)}
           ref={forwardedRef}
           aria-hidden="true"
           focusable="false"

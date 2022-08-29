@@ -1,5 +1,7 @@
 import '@testing-library/jest-dom';
 
+import type { IconProps } from '@spark-web/icon';
+import { CalendarIcon } from '@spark-web/icon';
 import { cleanup, render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { useState } from 'react';
@@ -56,5 +58,17 @@ describe('Alert component', () => {
     await userEvent.tab();
     await userEvent.keyboard('{enter}');
     expect(alert).not.toBeInTheDocument();
+  });
+
+  it('should support custom icons', async () => {
+    function Icon(props: IconProps) {
+      return <CalendarIcon data={{ testId: 'icon' }} {...props} />;
+    }
+    const { getByTestId } = render(
+      <Alert tone="info" icon={Icon}>
+        Repayment date
+      </Alert>
+    );
+    expect(getByTestId('icon')).toBeInTheDocument();
   });
 });

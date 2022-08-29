@@ -23,12 +23,14 @@ const toneToIcon = {
 };
 
 type AlertTones = keyof typeof toneToIcon;
+type IconWithRef = typeof toneToIcon[AlertTones];
+type IconWithWithoutRef = (props: IconProps) => JSX.Element;
 
 export type AlertProps = {
   children: string | ReactNode;
   data?: DataAttributeMap;
   heading?: string;
-  icon?: ({ size: sizeKey, tone }: IconProps) => JSX.Element;
+  icon?: IconWithRef | IconWithWithoutRef;
   id?: string;
   tone: AlertTones;
 } & (
