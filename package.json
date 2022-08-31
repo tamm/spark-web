@@ -4,8 +4,9 @@
   "private": true,
   "license": "MIT",
   "workspaces": [
-    "packages/*",
-    "docs"
+    "docs",
+    "examples/*",
+    "packages/*"
   ],
   "scripts": {
     "build:docs": "yarn --cwd=docs build",
