@@ -344,7 +344,7 @@ export const Dropzone = forwardRef<HTMLInputElement, DropzoneProps>(
   }
 );
 
-Dropzone.displayName = 'FileUpload';
+Dropzone.displayName = 'Dropzone';
 
 function useDropzoneStyles({
   disabled,
