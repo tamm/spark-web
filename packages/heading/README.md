@@ -61,12 +61,13 @@ foreground colour is inverted.
 
 ## Props
 
-| Prop      | Type                                   | Default | Description                                         |
-| --------- | -------------------------------------- | ------- | --------------------------------------------------- |
-| children  | React.ReactNode                        |         | Content to be rendered as the heading.              |
-| id?       | string                                 |         | Sets a unique identifier for the element.           |
-| truncate? | boolean                                |         | Indicate whether to truncate text to a single line. |
-| data?     | [DataAttributeMap][data-attribute-map] |         | Sets data attributes on the component.              |
+| Prop      | Type                                   | Default   | Description                                         |
+| --------- | -------------------------------------- | --------- | --------------------------------------------------- |
+| children  | React.ReactNode                        |           | Content to be rendered as the heading.              |
+| data?     | [DataAttributeMap][data-attribute-map] |           | Sets data attributes on the component.              |
+| id?       | string                                 |           | Sets a unique identifier for the element.           |
+| tone?     | "primary" \| "neutral"                 | "neutral" | The tone of the text.                               |
+| truncate? | boolean                                |           | Indicate whether to truncate text to a single line. |
 
 Extra props are passed into the underlying [`Box`](/package/box) component.
 

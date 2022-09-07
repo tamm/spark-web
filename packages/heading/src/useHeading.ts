@@ -1,3 +1,4 @@
+import type { ForegroundTone } from '@spark-web/text';
 import { createTextStyles, useForegroundTone } from '@spark-web/text';
 import type { BrighteTheme } from '@spark-web/theme';
 import { useTheme } from '@spark-web/theme';
@@ -9,18 +10,24 @@ export type UseHeadingProps = {
   align?: 'left' | 'center' | 'right';
   /** The heading level. */
   level: HeadingLevel;
+  /** The tone of the text. */
+  tone?: ForegroundTone;
 };
 
-export function useHeading({ align, level }: UseHeadingProps) {
+export function useHeading({
+  align,
+  level,
+  tone = 'neutral',
+}: UseHeadingProps) {
   const { typography, utils } = useTheme();
-  const color = useForegroundTone('neutral');
+  const color = useForegroundTone(tone);
   const { mobile, tablet } = typography.heading.level[level];
   const responsiveStyles = utils.responsiveStyles({
     mobile: createTextStyles(mobile),
     tablet: createTextStyles(tablet),
   });
 
-  const styles = [
+  return [
     {
       color,
       fontFamily: typography.fontFamily.display.name,
@@ -29,6 +36,4 @@ export function useHeading({ align, level }: UseHeadingProps) {
     },
     responsiveStyles,
   ];
-
-  return styles;
 }
