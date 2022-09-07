@@ -23,6 +23,7 @@ export const InputContainer = ({
 
   return (
     <Box
+      borderRadius="small"
       position="relative"
       background={disabled ? 'inputDisabled' : 'input'}
       {...boxProps}
