@@ -8,4 +8,10 @@ export { useButtonStyles } from './useButtonStyles';
 export type { BaseButtonProps } from './BaseButton';
 export type { ButtonProps } from './Button';
 export type { ButtonLinkProps } from './ButtonLink';
+export type {
+  ButtonChildrenProps,
+  ButtonProminence,
+  ButtonSize,
+  ButtonTone,
+} from './types';
 export type { UseButtonStylesProps } from './useButtonStyles';
