@@ -1,5 +1,14 @@
 # @spark-web/utils
 
+## 1.2.2
+
+### Patch Changes
+
+- [#208](https://github.com/brighte-labs/spark-web/pull/208)
+  [`1ea26ef`](https://github.com/brighte-labs/spark-web/commit/1ea26ef04a3b45875ed0dd2326eeab1fbe1e4bc5)
+  Thanks [@lukebennett88](https://github.com/lukebennett88)! - Lower required
+  node version
+
 ## 1.2.1
 
 ### Patch Changes

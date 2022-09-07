@@ -1,5 +1,21 @@
 # @spark-web/text-area
 
+## 1.0.10
+
+### Patch Changes
+
+- [#208](https://github.com/brighte-labs/spark-web/pull/208)
+  [`1ea26ef`](https://github.com/brighte-labs/spark-web/commit/1ea26ef04a3b45875ed0dd2326eeab1fbe1e4bc5)
+  Thanks [@lukebennett88](https://github.com/lukebennett88)! - Lower required
+  node version
+
+- Updated dependencies
+  [[`1ea26ef`](https://github.com/brighte-labs/spark-web/commit/1ea26ef04a3b45875ed0dd2326eeab1fbe1e4bc5)]:
+  - @spark-web/box@1.0.9
+  - @spark-web/field@3.0.5
+  - @spark-web/text-input@2.0.3
+  - @spark-web/theme@3.0.6
+
 ## 1.0.9
 
 ### Patch Changes

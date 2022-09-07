@@ -1,5 +1,24 @@
 # @spark-web/field
 
+## 3.0.5
+
+### Patch Changes
+
+- [#208](https://github.com/brighte-labs/spark-web/pull/208)
+  [`1ea26ef`](https://github.com/brighte-labs/spark-web/commit/1ea26ef04a3b45875ed0dd2326eeab1fbe1e4bc5)
+  Thanks [@lukebennett88](https://github.com/lukebennett88)! - Lower required
+  node version
+
+- Updated dependencies
+  [[`1ea26ef`](https://github.com/brighte-labs/spark-web/commit/1ea26ef04a3b45875ed0dd2326eeab1fbe1e4bc5)]:
+  - @spark-web/a11y@1.3.1
+  - @spark-web/box@1.0.9
+  - @spark-web/icon@1.2.1
+  - @spark-web/stack@1.0.9
+  - @spark-web/text@1.1.1
+  - @spark-web/theme@3.0.6
+  - @spark-web/utils@1.2.2
+
 ## 3.0.4
 
 ### Patch Changes

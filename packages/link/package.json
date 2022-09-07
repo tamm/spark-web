@@ -1,6 +1,6 @@
 {
   "name": "@spark-web/link",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "license": "MIT",
   "main": "dist/spark-web-link.cjs.js",
   "module": "dist/spark-web-link.esm.js",
@@ -9,8 +9,8 @@
   ],
   "dependencies": {
     "@babel/runtime": "^7.18.9",
-    "@spark-web/box": "^1.0.8",
-    "@spark-web/utils": "^1.2.1",
+    "@spark-web/box": "^1.0.9",
+    "@spark-web/utils": "^1.2.2",
     "dedent": "^0.7.0"
   },
   "devDependencies": {
