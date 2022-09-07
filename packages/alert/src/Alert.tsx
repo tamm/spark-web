@@ -27,7 +27,7 @@ type IconWithRef = typeof toneToIcon[AlertTones];
 type IconWithWithoutRef = (props: IconProps) => JSX.Element;
 
 export type AlertProps = {
-  children: string | ReactNode;
+  children: ReactNode;
   data?: DataAttributeMap;
   heading?: string;
   icon?: IconWithRef | IconWithWithoutRef;
