@@ -7,12 +7,14 @@ import { MDXContent } from '../components/mdx-components/mdx-content';
 import type { HeadingData } from '../utils/generate-toc';
 
 export const getStaticProps: GetStaticProps<{
-  code: string;
+  code: typeof home.title;
+  title: typeof home.body.code;
   toc: HeadingData[];
-}> = async () => {
+}> = () => {
   return {
     props: {
       code: home.body.code,
+      title: home.title,
       toc: home.toc,
     },
   };
@@ -20,10 +22,11 @@ export const getStaticProps: GetStaticProps<{
 
 export default function HomePage({
   code,
+  title,
   toc,
-}: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element {
+}: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
-    <DocsContent pageTitle={'Home'} includeNavigation toc={toc}>
+    <DocsContent pageTitle={title} includeNavigation toc={toc}>
       <Stack gap="xlarge">
         <MDXContent code={code} />
       </Stack>

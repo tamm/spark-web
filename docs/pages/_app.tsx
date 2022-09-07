@@ -4,7 +4,7 @@ import type { AppProps } from 'next/app';
 import NextHead from 'next/head';
 import { DefaultSeo } from 'next-seo';
 
-import { allPackages } from '../.contentlayer/generated';
+import { allGuides, allPackages } from '../.contentlayer/generated';
 import { Layout } from '../components/layout';
 import type { SidebarItem } from '../components/sidebar';
 
@@ -14,7 +14,7 @@ function App({
   navigation,
 }: AppProps & {
   navigation: SidebarItem[];
-}): JSX.Element {
+}) {
   return (
     <SparkProvider linkComponent={UniversalNextLink}>
       <NextHead>
@@ -45,6 +45,20 @@ App.getInitialProps = async () => {
             name: 'Demo',
             href: '/guide/demo',
           },
+          ...allGuides
+            .sort((a, b) => {
+              if (a.order < b.order) {
+                return -1;
+              }
+              if (a.order > b.order) {
+                return 1;
+              }
+              return 0;
+            })
+            .map(guide => ({
+              name: guide.title,
+              href: `/guide/${guide.slug}`,
+            })),
         ],
       },
       {

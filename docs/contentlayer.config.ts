@@ -28,11 +28,48 @@ export const Home = defineDocumentType(() => ({
   fields: {
     title: {
       type: 'string',
-      description: 'The title of the package',
+      description: 'The title of the page.',
       required: true,
     },
   },
   computedFields: {
+    toc: {
+      type: 'json',
+      resolve: async doc => generateToc(doc.body.raw),
+    },
+  },
+}));
+
+export const Guide = defineDocumentType(() => ({
+  name: 'Guide',
+  contentType: 'mdx',
+  filePathPattern: 'docs/pages/guide/*.md',
+  fields: {
+    title: {
+      type: 'string',
+      description: 'The title of the page.',
+      required: true,
+    },
+    description: {
+      type: 'string',
+      description: 'The description of the guide.',
+      required: false,
+    },
+    order: {
+      type: 'number',
+      description: 'Position in the sidebar that the guide should be shown.',
+      required: true,
+    },
+  },
+  computedFields: {
+    slug: {
+      type: 'string',
+      resolve: guide => {
+        const flattenedPath = guide._raw.sourceFileName;
+        const [slug] = flattenedPath.split('.md');
+        return slug;
+      },
+    },
     toc: {
       type: 'json',
       resolve: async doc => generateToc(doc.body.raw),
@@ -47,17 +84,17 @@ export const Package = defineDocumentType(() => ({
   fields: {
     title: {
       type: 'string',
-      description: 'The title of the package',
+      description: 'The title of the package.',
       required: true,
     },
     storybookPath: {
       type: 'string',
-      description: 'Path for Storybook',
+      description: 'Path for Storybook.',
       required: false,
     },
     isExperimentalPackage: {
       type: 'boolean',
-      description: 'Maturity status of the component',
+      description: 'Maturity status of the component.',
       required: false,
       default: true,
     },
@@ -118,7 +155,7 @@ export default makeSource({
   contentDirInclude: ['{docs/pages,packages}'],
   contentDirPath: '..',
   disableImportAliasWarning: true,
-  documentTypes: [Home, Package],
+  documentTypes: [Home, Guide, Package],
   mdx: {
     remarkPlugins: [remarkGfm],
     rehypePlugins: [rehypeSlug, untitledLiveCode],

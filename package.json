@@ -4,6 +4,7 @@
   "private": true,
   "license": "MIT",
   "workspaces": [
+    "examples/*",
     "packages/*",
     "docs"
   ],
@@ -16,6 +17,7 @@
     "check:types": "tsc --noEmit && cd docs && yarn run check:types",
     "clean": "git clean -fXd",
     "dev:docs": "yarn --cwd=docs dev:docs",
+    "dev:example-site": "yarn --cwd=examples/example-site dev",
     "dev:playroom": "yarn --cwd=docs dev:playroom",
     "dev:storybook": "yarn --cwd=docs dev:storybook",
     "docs:build": "yarn run build:docs",
