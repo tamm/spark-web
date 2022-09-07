@@ -1,5 +1,21 @@
 # @spark-web/dropzone
 
+## 2.0.7
+
+### Patch Changes
+
+- [#207](https://github.com/brighte-labs/spark-web/pull/207)
+  [`f0901b9`](https://github.com/brighte-labs/spark-web/commit/f0901b98738220e6439babd72ba01a613d501592)
+  Thanks [@lukebennett88](https://github.com/lukebennett88)! - Fix typo in
+  Dropzone displayName
+
+- Updated dependencies
+  [[`76522bd`](https://github.com/brighte-labs/spark-web/commit/76522bd266e8d07f0a2c003c0f78314ab002cf40),
+  [`94dd0ac`](https://github.com/brighte-labs/spark-web/commit/94dd0ac3fcb11868ccedf3637b6f91b52700bd6a),
+  [`35e4fb7`](https://github.com/brighte-labs/spark-web/commit/35e4fb734f334a1ae297e488ba824eeeb6848b38)]:
+  - @spark-web/button@1.4.3
+  - @spark-web/alert@2.2.2
+
 ## 2.0.6
 
 ### Patch Changes

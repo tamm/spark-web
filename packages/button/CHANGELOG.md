@@ -1,5 +1,15 @@
 # @spark-web/button
 
+## 1.4.3
+
+### Patch Changes
+
+- [#204](https://github.com/brighte-labs/spark-web/pull/204)
+  [`76522bd`](https://github.com/brighte-labs/spark-web/commit/76522bd266e8d07f0a2c003c0f78314ab002cf40)
+  Thanks [@lukebennett88](https://github.com/lukebennett88)! - Export
+  `ButtonChildrenProps`, `ButtonProminence`, `ButtonSize` and `ButtonTone`
+  types.
+
 ## 1.4.2
 
 ### Patch Changes

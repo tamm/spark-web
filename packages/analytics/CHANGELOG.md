@@ -1,5 +1,14 @@
 # @spark-web/analytics
 
+## 1.0.10
+
+### Patch Changes
+
+- [#199](https://github.com/brighte-labs/spark-web/pull/199)
+  [`b874484`](https://github.com/brighte-labs/spark-web/commit/b874484ebaad4a53712a81863062be66e8bb6117)
+  Thanks [@lukebennett88](https://github.com/lukebennett88)! - Export types for
+  Analytics package
+
 ## 1.0.9
 
 ### Patch Changes

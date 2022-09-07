@@ -1,6 +1,6 @@
 {
   "name": "@spark-web/alert",
-  "version": "2.2.1",
+  "version": "2.2.2",
   "license": "MIT",
   "main": "dist/spark-web-alert.cjs.js",
   "module": "dist/spark-web-alert.esm.js",
@@ -10,7 +10,7 @@
   "dependencies": {
     "@babel/runtime": "^7.18.9",
     "@emotion/css": "^11.9.0",
-    "@spark-web/button": "^1.4.2",
+    "@spark-web/button": "^1.4.3",
     "@spark-web/icon": "^1.2.1",
     "@spark-web/row": "^1.1.4",
     "@spark-web/stack": "^1.0.9",

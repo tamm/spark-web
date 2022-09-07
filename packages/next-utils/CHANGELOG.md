@@ -1,5 +1,14 @@
 # @spark-web/next-utils
 
+## 1.1.0
+
+### Minor Changes
+
+- [#206](https://github.com/brighte-labs/spark-web/pull/206)
+  [`b49e627`](https://github.com/brighte-labs/spark-web/commit/b49e627476817a65529cf7da3a96373690283351)
+  Thanks [@lukebennett88](https://github.com/lukebennett88)! - Move `next` out
+  of dependencies and into devDependencies and peerDependencies
+
 ## 1.0.9
 
 ### Patch Changes

@@ -1,5 +1,14 @@
 # @spark-web/heading
 
+## 2.1.0
+
+### Minor Changes
+
+- [#212](https://github.com/brighte-labs/spark-web/pull/212)
+  [`c674c72`](https://github.com/brighte-labs/spark-web/commit/c674c72ee7084e0addeaac27a31b714b9f22eaee)
+  Thanks [@lukebennett88](https://github.com/lukebennett88)! - Add tone prop and
+  spread in consumer props
+
 ## 2.0.4
 
 ### Patch Changes

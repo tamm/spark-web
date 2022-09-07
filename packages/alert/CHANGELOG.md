@@ -1,5 +1,23 @@
 # @spark-web/alert
 
+## 2.2.2
+
+### Patch Changes
+
+- [#205](https://github.com/brighte-labs/spark-web/pull/205)
+  [`94dd0ac`](https://github.com/brighte-labs/spark-web/commit/94dd0ac3fcb11868ccedf3637b6f91b52700bd6a)
+  Thanks [@lukebennett88](https://github.com/lukebennett88)! - Export AlertProps
+  type
+
+* [#203](https://github.com/brighte-labs/spark-web/pull/203)
+  [`35e4fb7`](https://github.com/brighte-labs/spark-web/commit/35e4fb734f334a1ae297e488ba824eeeb6848b38)
+  Thanks [@lukebennett88](https://github.com/lukebennett88)! - Remove redundant
+  `string` type from `children` prop
+
+* Updated dependencies
+  [[`76522bd`](https://github.com/brighte-labs/spark-web/commit/76522bd266e8d07f0a2c003c0f78314ab002cf40)]:
+  - @spark-web/button@1.4.3
+
 ## 2.2.1
 
 ### Patch Changes
