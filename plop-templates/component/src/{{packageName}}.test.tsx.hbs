@@ -1,0 +1,25 @@
+import '@testing-library/jest-dom/extend-expect';
+
+import { cleanup, render } from '@testing-library/react';
+
+import type { {{componentName}}Props } from './{{packageName}}';
+import { {{componentName}} } from './{{packageName}}';
+
+afterEach(cleanup);
+
+describe('{{componentName}}', () => {
+	it('Should not have ARIA violations after render', async () => {
+		vi.useRealTimers();
+		const { container } = render{{componentName}}();
+		const results = await axe(container);
+		expect(results).toHaveNoViolations();
+	});
+});
+
+////////////////////////////////////////////////////////////////////////////////
+
+/** Helpers */
+
+function render{{componentName}}(props?: Partial<{{componentName}}Props>) {
+	return render(<{{componentName}} {...props} />);
+}

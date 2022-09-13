@@ -49,3 +49,6 @@ coverage
 
 # Contentlayer
 .contentlayer
+
+# Plop
+plop-templates

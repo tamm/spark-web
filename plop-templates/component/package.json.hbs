@@ -1,0 +1,32 @@
+{
+	"name": "@spark-web/{{packageName}}",
+	"version": "0.0.0",
+	"homepage": "https://github.com/brighte-labs/spark-web#readme",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/brighte-labs/spark-web.git",
+		"directory": "packages/{{packageName}}"
+	},
+	"license": "MIT",
+	"main": "dist/spark-web-{{packageName}}.cjs.js",
+  "module": "dist/spark-web-{{packageName}}.esm.js",
+	"types": "spark-web-{{packageName}}.cjs.d",
+	"files": [
+		"CHANGELOG.md",
+		"dist",
+		"README.md"
+	],
+	"dependencies": {
+		"@babel/runtime": "^7.18.9"
+	},
+	"devDependencies": {
+    "@types/react": "^17.0.12",
+    "react": "^17.0.2"
+  },
+	"peerDependencies": {
+    "react": ">=17.0.2"
+  },
+	"publishConfig": {
+		"access": "public"
+	}
+}
