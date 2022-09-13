@@ -1,5 +1,5 @@
-export { Spinner } from './Spinner';
+export { Spinner } from './spinner';
 
 // types
 
-export type { SpinnerProps } from './Spinner';
+export type { SpinnerProps } from './spinner';

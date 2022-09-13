@@ -1,4 +1,4 @@
-export { forwardRefWithAs } from './forwardRefWithAs';
+export { forwardRefWithAs } from './forward-ref-with-as';
 export { isBoolean, isFunction, isNumber, isString } from './type-check';
 export { typedKeys } from './utility-functions';
 

@@ -1,7 +1,7 @@
-export { TextLink } from './TextLink';
-export { TextLinkButton } from './TextLinkButton';
+export { TextLink } from './text-link';
+export { TextLinkButton } from './text-link-button';
 
 // types
 
-export type { TextLinkProps } from './TextLink';
-export type { TextLinkButtonProps } from './TextLinkButton';
+export type { TextLinkProps } from './text-link';
+export type { TextLinkButtonProps } from './text-link-button';

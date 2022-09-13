@@ -3,8 +3,8 @@ export {
   AESTETICO_SEMIBOLD_URL,
   AesteticoStylesheet,
 } from './fonts';
-export { SparkProvider } from './SparkProvider';
+export { SparkProvider } from './spark-provider';
 
 // types
 
-export type { SparkProviderProps } from './SparkProvider';
+export type { SparkProviderProps } from './spark-provider';

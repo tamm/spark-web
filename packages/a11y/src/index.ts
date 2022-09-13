@@ -1,8 +1,8 @@
-export { Emoji } from './Emoji';
-export { useFocusRing, useFocusVisible } from './focusRing';
-export { composeId, IdProvider, mergeIds, useId } from './idContext';
-export { VisuallyHidden, visuallyHiddenStyles } from './VisuallyHidden';
+export { Emoji } from './emoji';
+export { useFocusRing, useFocusVisible } from './focus-ring';
+export { composeId, IdProvider, mergeIds, useId } from './id-context';
+export { VisuallyHidden, visuallyHiddenStyles } from './visually-hidden';
 
 // types
-export type { EmojiProps } from './Emoji';
-export type { BackgroundTone } from './focusRing';
+export type { EmojiProps } from './emoji';
+export type { BackgroundTone } from './focus-ring';

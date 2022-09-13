@@ -2,7 +2,7 @@ import { useTheme } from '@spark-web/theme';
 import type { ReactElement } from 'react';
 import { createContext, useContext } from 'react';
 
-import type { BoxStyleProps } from './useBoxStyles';
+import type { BoxStyleProps } from './use-box-styles';
 
 export type BackgroundVariant =
   | NonNullable<BoxStyleProps['background']>

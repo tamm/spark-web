@@ -1,12 +1,12 @@
-export { Link } from './Link';
+export { Link } from './link';
 export {
   DefaultLinkComponent,
   LinkComponentContext,
   makeLinkComponent,
   useLinkComponent,
-} from './linkContext';
+} from './link-context';
 
 // types
 
-export type { LinkProps } from './Link';
-export type { LinkComponent, LinkComponentProps } from './linkContext';
+export type { LinkProps } from './link';
+export type { LinkComponent, LinkComponentProps } from './link-context';

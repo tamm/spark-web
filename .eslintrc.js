@@ -24,6 +24,7 @@ module.exports = {
     'import',
     'jest',
     'simple-import-sort',
+    'unicorn',
   ],
   settings: {
     next: { rootDir: ['docs/', 'packages/*/'] },
@@ -123,6 +124,12 @@ module.exports = {
       },
     ],
     '@preconstruct/format-js-tag/format': ERROR,
+    'unicorn/filename-case': [
+      'error',
+      {
+        case: 'kebabCase',
+      },
+    ],
   },
   overrides: [
     {

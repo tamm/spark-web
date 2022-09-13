@@ -1,5 +1,5 @@
 export { FieldContextProvider, useFieldContext } from './context';
-export { Field, FieldMessage, useFieldIds } from './Field';
+export { Field, FieldMessage, useFieldIds } from './field';
 
 // types
 
@@ -8,4 +8,4 @@ export type {
   FieldState,
   InputPropsDerivedFromField,
 } from './context';
-export type { FieldProps, Tone } from './Field';
+export type { FieldProps, Tone } from './field';

@@ -1,5 +1,5 @@
-export { Divider } from './Divider';
+export { Divider } from './divider';
 
 // types
 
-export type { DividerProps } from './Divider';
+export type { DividerProps } from './divider';

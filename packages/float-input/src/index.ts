@@ -1,6 +1,6 @@
-export { FloatInput } from './FloatInput';
+export { FloatInput } from './float-input';
 
 // types
 
-export type { FloatInputProps } from './FloatInput';
-export type { UseFloatInputProps } from './useFloatInput';
+export type { FloatInputProps } from './float-input';
+export type { UseFloatInputProps } from './use-float-input';

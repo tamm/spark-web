@@ -1,6 +1,6 @@
 import { createContext, useContext } from 'react';
 
-import type { useDefaultTextProps } from './defaultTextProps';
+import type { useDefaultTextProps } from './default-text-props';
 
 type TextContextType = ReturnType<typeof useDefaultTextProps>;
 

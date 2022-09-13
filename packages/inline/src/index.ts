@@ -1,5 +1,5 @@
-export { Inline } from './Inline';
+export { Inline } from './inline';
 
 // types
 
-export type { InlineProps } from './Inline';
+export type { InlineProps } from './inline';

@@ -1,5 +1,5 @@
-export { Hidden } from './Hidden';
+export { Hidden } from './hidden';
 
 // types
 
-export type { HiddenProps } from './Hidden';
+export type { HiddenProps } from './hidden';

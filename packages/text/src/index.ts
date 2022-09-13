@@ -2,16 +2,16 @@ export { useTextContext } from './context';
 export {
   DefaultTextPropsProvider,
   useDefaultTextProps,
-} from './defaultTextProps';
-export { Strong } from './Strong';
-export { Text } from './Text';
-export { useForegroundTone } from './useForegroundTone';
-export { useOverflowStrategy } from './useOverflowStrategy';
-export { createTextStyles, useText } from './useText';
+} from './default-text-props';
+export { Strong } from './strong';
+export { Text } from './text';
+export { useForegroundTone } from './use-foreground-tone';
+export { useOverflowStrategy } from './use-overflow-strategy';
+export { createTextStyles, useText } from './use-text';
 
 // types
 
-export type { StrongProps } from './Strong';
-export type { TextProps } from './Text';
-export type { ForegroundTone } from './useForegroundTone';
-export type { TextOverflowStrategy } from './useOverflowStrategy';
+export type { StrongProps } from './strong';
+export type { TextProps } from './text';
+export type { ForegroundTone } from './use-foreground-tone';
+export type { TextOverflowStrategy } from './use-overflow-strategy';

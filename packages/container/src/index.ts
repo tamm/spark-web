@@ -1,5 +1,5 @@
-export { Container } from './Container';
+export { Container } from './container';
 
 // types
 
-export type { ContainerProps } from './Container';
+export type { ContainerProps } from './container';

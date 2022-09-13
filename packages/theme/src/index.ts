@@ -1,10 +1,10 @@
-export { isLight } from './colorUtils';
+export { isLight } from './color-utils';
 export { defaultTheme, ThemeProvider, useTheme } from './context';
-export { makeBrighteTheme } from './makeTheme';
-export { createResponsiveMapFn } from './themeUtils';
+export { makeBrighteTheme } from './make-theme';
+export { createResponsiveMapFn } from './theme-utils';
 export { defaultTokens } from './tokens';
 
 // types
 
-export type { BrighteTextDefinition, BrighteTheme } from './makeTheme';
-export type { ResponsiveProp, ResponsiveRangeProps } from './themeUtils';
+export type { BrighteTextDefinition, BrighteTheme } from './make-theme';
+export type { ResponsiveProp, ResponsiveRangeProps } from './theme-utils';

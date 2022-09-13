@@ -1,5 +1,5 @@
-export { Columns } from './Columns';
+export { Columns } from './columns';
 
 // types
 
-export type { ColumnsProps } from './Columns';
+export type { ColumnsProps } from './columns';

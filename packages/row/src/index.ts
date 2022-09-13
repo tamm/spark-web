@@ -1,5 +1,5 @@
-export { Row } from './Row';
+export { Row } from './row';
 
 // types
 
-export type { RowProps } from './Row';
+export type { RowProps } from './row';

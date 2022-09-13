@@ -1,5 +1,5 @@
-export { Select } from './Select';
+export { Select } from './select';
 
 // types
 
-export type { SelectProps } from './Select';
+export type { SelectProps } from './select';

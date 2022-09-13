@@ -1,12 +1,12 @@
-export { AnalyticsContext } from './AnalyticsContext';
-export { AnalyticsListener } from './AnalyticsListener';
-export { useAnalytics } from './useAnalytics';
+export { AnalyticsContext } from './analytics-context';
+export { AnalyticsListener } from './analytics-listener';
+export { useAnalytics } from './use-analytics';
 
 // types
 
-export type { AnalyticsListenerProps } from './AnalyticsListener';
+export type { AnalyticsListenerProps } from './analytics-listener';
 export type {
   AnalyticsEventData,
   AnalyticsEventName,
-} from './AnalyticsListenerContext';
-export type { AnalyticsHookType } from './useAnalytics';
+} from './analytics-listener-context';
+export type { AnalyticsHookType } from './use-analytics';

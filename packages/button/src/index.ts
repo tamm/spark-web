@@ -1,17 +1,17 @@
-export { BaseButton } from './BaseButton';
-export { Button } from './Button';
-export { ButtonLink } from './ButtonLink';
-export { useButtonStyles } from './useButtonStyles';
+export { BaseButton } from './base-button';
+export { Button } from './button';
+export { ButtonLink } from './button-link';
+export { useButtonStyles } from './use-button-styles';
 
 // types
 
-export type { BaseButtonProps } from './BaseButton';
-export type { ButtonProps } from './Button';
-export type { ButtonLinkProps } from './ButtonLink';
+export type { BaseButtonProps } from './base-button';
+export type { ButtonProps } from './button';
+export type { ButtonLinkProps } from './button-link';
 export type {
   ButtonChildrenProps,
   ButtonProminence,
   ButtonSize,
   ButtonTone,
 } from './types';
-export type { UseButtonStylesProps } from './useButtonStyles';
+export type { UseButtonStylesProps } from './use-button-styles';

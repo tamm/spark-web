@@ -1,5 +1,5 @@
-export { Badge, IndicatorDot } from './Badge';
+export { Badge, IndicatorDot } from './badge';
 
 // types
 
-export type { BadgeProps, IndicatorDotProps } from './Badge';
+export type { BadgeProps, IndicatorDotProps } from './badge';

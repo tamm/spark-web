@@ -1,8 +1,8 @@
-export { BackgroundProvider } from './BackgroundProvider';
-export { Box } from './Box';
+export { BackgroundProvider } from './background-provider';
+export { Box } from './box';
 export { useBackground, useBackgroundLightness } from './context';
 
 // types
 
-export type { BackgroundProviderProps } from './BackgroundProvider';
-export type { BoxProps } from './Box';
+export type { BackgroundProviderProps } from './background-provider';
+export type { BoxProps } from './box';
