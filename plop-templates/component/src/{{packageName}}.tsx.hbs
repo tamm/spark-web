@@ -1,3 +1,6 @@
+import { Box } from '@spark-web/box';
+import type { DataAttributeMap } from '@spark-web/utils/internal';
+
 ////////////////////////////////////////////////////////////////////////////////
 
 /**
@@ -7,10 +10,12 @@
  */
 
 function {{componentName}}(props: {{componentName}}Props) {
-	return <div {...props} />;
+  return <Box {...props} />;
 }
 
 type {{componentName}}Props = {
+  /** Map of data attributes. */
+  data?: DataAttributeMap;
 };
 
 ////////////////////////////////////////////////////////////////////////////////

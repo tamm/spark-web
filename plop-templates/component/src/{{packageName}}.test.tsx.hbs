@@ -8,18 +8,23 @@ import { {{componentName}} } from './{{packageName}}';
 afterEach(cleanup);
 
 describe('{{componentName}}', () => {
-	it('Should not have ARIA violations after render', async () => {
-		vi.useRealTimers();
-		const { container } = render{{componentName}}();
-		const results = await axe(container);
-		expect(results).toHaveNoViolations();
-	});
+  it('should build expected data attribute', () => {
+    const { getByTestId } = render{{componentName}}({
+      data: { testId: TEST_VALUE },
+    });
+    const element = getByTestId(TEST_VALUE);
+    expect(element).toBeInTheDocument();
+  });
 });
 
 ////////////////////////////////////////////////////////////////////////////////
 
-/** Helpers */
+/**
+ * Setup
+ */
 
 function render{{componentName}}(props?: Partial<{{componentName}}Props>) {
-	return render(<{{componentName}} {...props} />);
+  return render(<{{componentName}} {...props} />);
 }
+
+const TEST_VALUE = 'test_value';
