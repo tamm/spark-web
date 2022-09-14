@@ -10,16 +10,6 @@ for detailed instructions on how to get started with our project.
 
 ## Known Issues
 
-### Storybook url
-
-After running storybook with
-
-```bash
-yarn dev:storybook
-```
-
-and add `/storybook/index.html` to the end of the url output.
-
 ### Storybook shows a blank screen
 
 This usually happens when editing or adding components used in stories, and is

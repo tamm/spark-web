@@ -1,4 +1,6 @@
-module.exports = {
+import type { StorybookConfig } from '@storybook/core-common';
+
+const config: StorybookConfig = {
   stories: ['../../packages/**/*.stories.@(js|jsx|ts|tsx)'],
   addons: [
     '@storybook/addon-a11y',
@@ -7,12 +9,13 @@ module.exports = {
     '@storybook/addon-postcss',
   ],
   framework: '@storybook/react',
-  webpackFinal: async config => {
-    config.output.publicPath = '/storybook/';
-    return config;
+  core: {
+    builder: 'webpack5',
   },
-  managerWebpack: async config => {
-    config.output.publicPath = '/storybook/';
-    return config;
+  features: {
+    // Allows code-splitting for faster load times
+    storyStoreV7: true,
   },
 };
+
+export default config;
