@@ -1,6 +1,7 @@
+import { readFile } from 'node:fs/promises';
+
 import { plugin as untitledLiveCode } from '@untitled-docs/live-code/rehype/dist/live-code.cjs.js';
 import { defineDocumentType, makeSource } from 'contentlayer/source-files';
-import { readFile } from 'node:fs/promises';
 import rehypeSlug from 'rehype-slug';
 import { remark } from 'remark';
 import remarkGfm from 'remark-gfm';

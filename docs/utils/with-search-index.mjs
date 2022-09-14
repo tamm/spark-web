@@ -1,3 +1,6 @@
+import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
+import path from 'node:path';
+
 import chokidar from 'chokidar';
 import lunr from 'lunr';
 import {
@@ -5,8 +8,6 @@ import {
   PHASE_EXPORT,
   PHASE_PRODUCTION_BUILD,
 } from 'next/constants.js';
-import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
-import path from 'node:path';
 
 function tocToHeadingObj(toc, output = {}) {
   if (!toc || !Array.isArray(toc) || !toc.length) {

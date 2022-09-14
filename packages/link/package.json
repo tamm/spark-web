@@ -8,7 +8,7 @@
     "dist"
   ],
   "dependencies": {
-    "@babel/runtime": "^7.18.9",
+    "@babel/runtime": "^7.19.0",
     "@spark-web/box": "^1.0.9",
     "@spark-web/utils": "^1.2.2",
     "dedent": "^0.7.0"
