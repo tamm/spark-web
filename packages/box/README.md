@@ -51,41 +51,30 @@ Most of Box's props accept a string value (usually corresponding to a token), we
 also accept an object for responsive styles.
 
 ```jsx live
-<Box
-  background="primaryLow"
-  display="inline-flex"
-  flexDirection={{ mobile: 'row', tablet: 'column', desktop: 'rowReverse' }}
-  gap={{ mobile: 'small', tablet: 'medium', desktop: 'large' }}
-  padding={{ mobile: 'small', tablet: 'medium', desktop: 'large' }}
->
-  <Row
-    align="center"
-    alignY="center"
-    background="primary"
-    height={{ mobile: 'small', tablet: 'medium', desktop: 'large' }}
-    width={{ mobile: 'small', tablet: 'medium', desktop: 'large' }}
+const items = [1, 2, 3];
+
+return (
+  <Box
+    background="primaryLow"
+    display="inline-flex"
+    flexDirection={{ mobile: 'row', tablet: 'column', desktop: 'rowReverse' }}
+    gap={{ mobile: 'small', tablet: 'medium', desktop: 'large' }}
+    padding={{ mobile: 'small', tablet: 'medium', desktop: 'large' }}
   >
-    <Text>1</Text>
-  </Row>
-  <Row
-    align="center"
-    alignY="center"
-    background="primary"
-    height={{ mobile: 'small', tablet: 'medium', desktop: 'large' }}
-    width={{ mobile: 'small', tablet: 'medium', desktop: 'large' }}
-  >
-    <Text>2</Text>
-  </Row>
-  <Row
-    align="center"
-    alignY="center"
-    background="primary"
-    height={{ mobile: 'small', tablet: 'medium', desktop: 'large' }}
-    width={{ mobile: 'small', tablet: 'medium', desktop: 'large' }}
-  >
-    <Text>3</Text>
-  </Row>
-</Box>
+    {items.map(item => (
+      <Row
+        key={item}
+        align="center"
+        alignY="center"
+        background="primary"
+        height={{ mobile: 'small', tablet: 'medium', desktop: 'large' }}
+        width={{ mobile: 'small', tablet: 'medium', desktop: 'large' }}
+      >
+        <Text>{item}</Text>
+      </Row>
+    ))}
+  </Box>
+);
 ```
 
 Resize your browser to see the example above change at different breakpoints.
@@ -96,122 +85,40 @@ Box stores the background in a provider. We can use this to work out what colour
 to use by default for text elements.
 
 ```jsx live
-<Stack gap="large">
-  <Columns collapseBelow="tablet" gap="large" template={[1, 1, 1]}>
-    <Box
-      shadow="medium"
-      background="surface"
-      height="large"
-      display="flex"
-      flexShrink={0}
-      alignItems="center"
-      justifyContent="center"
-    >
-      <Text weight="semibold">surface</Text>
-    </Box>
-    <Box
-      shadow="medium"
-      background="positiveLight"
-      height="large"
-      display="flex"
-      flexShrink={0}
-      alignItems="center"
-      justifyContent="center"
-    >
-      <Text weight="semibold">positiveLight</Text>
-    </Box>
-    <Box
-      shadow="medium"
-      background="infoLight"
-      height="large"
-      display="flex"
-      flexShrink={0}
-      alignItems="center"
-      justifyContent="center"
-    >
-      <Text weight="semibold">infoLight</Text>
-    </Box>
-    <Box
-      shadow="medium"
-      background="cautionLight"
-      height="large"
-      display="flex"
-      flexShrink={0}
-      alignItems="center"
-      justifyContent="center"
-    >
-      <Text weight="semibold">cautionLight</Text>
-    </Box>
-    <Box
-      shadow="medium"
-      background="criticalLight"
-      height="large"
-      display="flex"
-      flexShrink={0}
-      alignItems="center"
-      justifyContent="center"
-    >
-      <Text weight="semibold">criticalLight</Text>
-    </Box>
-  </Columns>
-  <Columns collapseBelow="tablet" gap="large" template={[1, 1, 1]}>
-    <Box
-      shadow="medium"
-      background="muted"
-      height="large"
-      display="flex"
-      flexShrink={0}
-      alignItems="center"
-      justifyContent="center"
-    >
-      <Text weight="semibold">muted</Text>
-    </Box>
-    <Box
-      shadow="medium"
-      background="positive"
-      height="large"
-      display="flex"
-      flexShrink={0}
-      alignItems="center"
-      justifyContent="center"
-    >
-      <Text weight="semibold">positive</Text>
-    </Box>
-    <Box
-      shadow="medium"
-      background="info"
-      height="large"
-      display="flex"
-      flexShrink={0}
-      alignItems="center"
-      justifyContent="center"
-    >
-      <Text weight="semibold">info</Text>
-    </Box>
-    <Box
-      shadow="medium"
-      background="caution"
-      height="large"
-      display="flex"
-      flexShrink={0}
-      alignItems="center"
-      justifyContent="center"
-    >
-      <Text weight="semibold">caution</Text>
-    </Box>
-    <Box
-      shadow="medium"
-      background="critical"
-      height="large"
-      display="flex"
-      flexShrink={0}
-      alignItems="center"
-      justifyContent="center"
-    >
-      <Text weight="semibold">critical</Text>
-    </Box>
-  </Columns>
-</Stack>
+const backgroundTones = [
+  // Light
+  ['surface', 'positiveLight', 'infoLight', 'cautionLight', 'criticalLight'],
+  // Dark
+  ['muted', 'positive', 'info', 'caution', 'critical'],
+];
+
+return (
+  <Stack gap="large">
+    {backgroundTones.map((backgrounds, index) => (
+      <Columns
+        key={index}
+        collapseBelow="tablet"
+        gap="large"
+        template={[1, 1, 1]}
+      >
+        {backgrounds.map(background => (
+          <Box
+            key={background}
+            shadow="medium"
+            background={background}
+            height="large"
+            display="flex"
+            flexShrink={0}
+            alignItems="center"
+            justifyContent="center"
+          >
+            <Text weight="semibold">{background}</Text>
+          </Box>
+        ))}
+      </Columns>
+    ))}
+  </Stack>
+);
 ```
 
 Notice that the Text in the example above doesn't use the tone prop, the colour
