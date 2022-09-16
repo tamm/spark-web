@@ -23,13 +23,13 @@ Defaults to `primary`.
 
 ```jsx live
 <Stack gap="large">
-  <Text weight="strong">Decorative tones</Text>
+  <Text weight="semibold">Decorative tones</Text>
   <Inline gap="small">
     <Button tone="primary">Primary</Button>
     <Button tone="secondary">Secondary</Button>
   </Inline>
   <Divider />
-  <Text weight="strong">Semantic tones</Text>
+  <Text weight="semibold">Semantic tones</Text>
   <Inline gap="small">
     <Button tone="neutral">Neutral</Button>
     <Button tone="positive">Positive</Button>
@@ -62,7 +62,7 @@ const extraButtonTones = [
 return (
   <Stack gap="large" dividers>
     <Stack gap="large">
-      <Text weight="strong">High prominence</Text>
+      <Text weight="semibold">High prominence</Text>
       <Inline gap="small">
         {baseButtonTones.map(({ label, tone }) => (
           <Button key={label} tone={tone} prominence="high">
@@ -73,7 +73,7 @@ return (
       </Inline>
     </Stack>
     <Stack gap="large">
-      <Text weight="strong">Low prominence</Text>
+      <Text weight="semibold">Low prominence</Text>
       <Inline gap="small">
         {baseButtonTones.concat(extraButtonTones).map(({ label, tone }) => (
           <Button key={label} tone={tone} prominence="low">
@@ -84,7 +84,7 @@ return (
       </Inline>
     </Stack>
     <Stack gap="large">
-      <Text weight="strong">None prominence</Text>
+      <Text weight="semibold">None prominence</Text>
       <Inline gap="small">
         {baseButtonTones.concat(extraButtonTones).map(({ label, tone }) => (
           <Button key={label} tone={tone} prominence="none">

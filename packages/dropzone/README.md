@@ -22,7 +22,7 @@ By providing an `accept` prop, we can make the `Dropzone` only accept certain
 file types.
 
 <details>
-<summary><Text inline weight="strong">Accepted MIME types:</Text></summary>
+<summary><Text inline weight="semibold">Accepted MIME types:</Text></summary>
 <br />
 
 - `audio/*`

@@ -62,11 +62,11 @@ text.
 ```jsx live
 <TextList gap="large">
   <Stack gap="medium">
-    <Text weight="strong">This is a paragraph.</Text>
+    <Text weight="semibold">This is a paragraph.</Text>
     <Text>This is another paragraph.</Text>
   </Stack>
   <Stack gap="medium">
-    <Text weight="strong">This is a paragraph.</Text>
+    <Text weight="semibold">This is a paragraph.</Text>
     <Text>This is another paragraph.</Text>
   </Stack>
 </TextList>
