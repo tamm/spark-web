@@ -7,12 +7,26 @@ isExperimentalPackage: false
 Constrained, purposeful heading styles as a component.
 
 ```jsx live
-<Stack gap="xlarge">
-  <Heading level="1">Heading level 1</Heading>
-  <Heading level="2">Heading level 2</Heading>
-  <Heading level="3">Heading level 3</Heading>
-  <Heading level="4">Heading level 4</Heading>
-</Stack>
+const headingLevels = ['1', '2', '3', '4'];
+
+return (
+  <Columns collapseBelow="tablet" gap="xlarge">
+    <Stack gap="large">
+      {headingLevels.map(headingLevel => (
+        <Heading key={headingLevel} level={headingLevel} tone="neutral">
+          Heading level {headingLevel}
+        </Heading>
+      ))}
+    </Stack>
+    <Stack gap="large">
+      {headingLevels.map(headingLevel => (
+        <Heading key={headingLevel} level={headingLevel} tone="primary">
+          Heading level {headingLevel}
+        </Heading>
+      ))}
+    </Stack>
+  </Columns>
+);
 ```
 
 ## Example
@@ -63,9 +77,11 @@ foreground colour is inverted.
 
 | Prop      | Type                                   | Default   | Description                                         |
 | --------- | -------------------------------------- | --------- | --------------------------------------------------- |
+| align?    | "left" \| "center" \| "right"          |           | The horizontal alignment.                           |
 | children  | React.ReactNode                        |           | Content to be rendered as the heading.              |
 | data?     | [DataAttributeMap][data-attribute-map] |           | Sets data attributes on the component.              |
 | id?       | string                                 |           | Sets a unique identifier for the element.           |
+| level     | "1" \| "2" \| "3" \| "4"               |           | The heading level.                                  |
 | tone?     | "primary" \| "neutral"                 | "neutral" | The tone of the text.                               |
 | truncate? | boolean                                |           | Indicate whether to truncate text to a single line. |
 

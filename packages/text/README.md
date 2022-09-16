@@ -9,44 +9,26 @@ Constrained, purposeful text styles as a component.
 ## Examples
 
 ```jsx live
-<Columns gap="large" collapseBelow="wide">
-  <Stack gap="medium">
-    <Text size="large">large regular</Text>
-    <Text size="large" weight="semibold">
-      large medium
-    </Text>
-    <Text size="large" weight="strong">
-      large strong
-    </Text>
-  </Stack>
-  <Stack gap="medium">
-    <Text size="standard">standard regular</Text>
-    <Text size="standard" weight="semibold">
-      standard medium
-    </Text>
-    <Text size="standard" weight="strong">
-      standard strong
-    </Text>
-  </Stack>
-  <Stack gap="small">
-    <Text size="small">small regular</Text>
-    <Text size="small" weight="semibold">
-      small medium
-    </Text>
-    <Text size="small" weight="strong">
-      small strong
-    </Text>
-  </Stack>
-  <Stack gap="small">
-    <Text size="xsmall">xsmall regular</Text>
-    <Text size="xsmall" weight="semibold">
-      xsmall medium
-    </Text>
-    <Text size="xsmall" weight="strong">
-      xsmall strong
-    </Text>
-  </Stack>
-</Columns>
+const textSizes = ['large', 'standard', 'small', 'xsmall'];
+
+return (
+  <Columns collapseBelow="tablet" gap="xlarge">
+    <Stack gap="large">
+      {textSizes.map(textSize => (
+        <Text key={textSize} size={textSize} weight="regular">
+          Text {textSize} regular
+        </Text>
+      ))}
+    </Stack>
+    <Stack gap="large">
+      {textSizes.map(textSize => (
+        <Text key={textSize} size={textSize} weight="semibold">
+          Text {textSize} regular
+        </Text>
+      ))}
+    </Stack>
+  </Columns>
+);
 ```
 
 ### Align
@@ -67,30 +49,24 @@ Use the `overflowStrategy` prop to manage how `Text` behaves with regard to
 overflow.
 
 ```jsx live
-<Stack gap="large" style={{ width: 200 }}>
-  <Stack gap="small">
-    <Text weight="strong">Default</Text>
-    <Text>The quick brown fox jumps over the lazy dog.</Text>
+const overflowStrategies = ['truncate', 'nowrap', 'breakword'];
+
+return (
+  <Stack gap="large" style={{ width: 200 }}>
+    <Stack gap="small">
+      <Text weight="semibold">Default</Text>
+      <Text>The quick brown fox jumps over the lazy dog.</Text>
+    </Stack>
+    {overflowStrategies.map(overflowStrategy => (
+      <Stack key={overflowStrategy} gap="small">
+        <Text weight="semibold">{overflowStrategy}</Text>
+        <Text overflowStrategy={overflowStrategy}>
+          The quick brown fox jumps over the lazy dog.
+        </Text>
+      </Stack>
+    ))}
   </Stack>
-  <Stack gap="small">
-    <Text weight="strong">Truncate</Text>
-    <Text overflowStrategy="truncate">
-      The quick brown fox jumps over the lazy dog.
-    </Text>
-  </Stack>
-  <Stack gap="small">
-    <Text weight="strong">No wrap</Text>
-    <Text overflowStrategy="nowrap">
-      The quick brown fox jumps over the lazy dog.
-    </Text>
-  </Stack>
-  <Stack gap="small">
-    <Text weight="strong">Break word</Text>
-    <Text overflowStrategy="breakword">
-      The_quick_brown_fox_jumps_over_the_lazy dog.
-    </Text>
-  </Stack>
-</Stack>
+);
 ```
 
 ### Tone
@@ -99,14 +75,35 @@ The foreground colour of text can be set by applying a `tone`. In addition to
 the foundation tones, “muted” provides a way to de-emphasise text.
 
 ```jsx live
-<Inline gap="small">
-  <Text tone="neutral">neutral (default)</Text>
-  <Text tone="muted">muted</Text>
-  <Text tone="info">info</Text>
-  <Text tone="positive">positive</Text>
-  <Text tone="caution">caution</Text>
-  <Text tone="critical">critical</Text>
-</Inline>
+const textTones = [
+  'neutral', // Default
+  'accent',
+  'caution',
+  'critical',
+  'disabled',
+  'fieldAccent',
+  'info',
+  'link',
+  'muted',
+  'placeholder',
+  'positive',
+  'primary',
+  'primaryActive',
+  'primaryHover',
+  'secondary',
+  'secondaryActive',
+  'secondaryHover',
+];
+
+return (
+  <Columns collapseBelow="tablet" gap="large" template={[1, 1]}>
+    {textTones.map(tone => (
+      <Text key={tone} tone={tone}>
+        {tone}
+      </Text>
+    ))}
+  </Columns>
+);
 ```
 
 ### Weight
