@@ -1,5 +1,26 @@
 # @spark-web/stack
 
+## 1.0.10
+
+### Patch Changes
+
+- [#218](https://github.com/brighte-labs/spark-web/pull/218)
+  [`6fc8d1b`](https://github.com/brighte-labs/spark-web/commit/6fc8d1bc37e25d0cd622bc37f68a1d92eb5961b5)
+  Thanks [@nderkim](https://github.com/nderkim)! - Rename files to kebab case
+
+- [#222](https://github.com/brighte-labs/spark-web/pull/222)
+  [`7f93c45`](https://github.com/brighte-labs/spark-web/commit/7f93c45bbae8c765e10df9d0dd7615473797749b)
+  Thanks [@lukebennett88](https://github.com/lukebennett88)! - Update
+  dependencies
+
+- Updated dependencies
+  [[`6fc8d1b`](https://github.com/brighte-labs/spark-web/commit/6fc8d1bc37e25d0cd622bc37f68a1d92eb5961b5),
+  [`7f93c45`](https://github.com/brighte-labs/spark-web/commit/7f93c45bbae8c765e10df9d0dd7615473797749b)]:
+  - @spark-web/box@1.0.10
+  - @spark-web/divider@1.0.10
+  - @spark-web/theme@3.0.7
+  - @spark-web/utils@1.2.3
+
 ## 1.0.9
 
 ### Patch Changes

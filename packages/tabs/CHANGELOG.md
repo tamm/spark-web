@@ -1,5 +1,27 @@
 # @spark-web/tabs
 
+## 0.1.4
+
+### Patch Changes
+
+- [#222](https://github.com/brighte-labs/spark-web/pull/222)
+  [`7f93c45`](https://github.com/brighte-labs/spark-web/commit/7f93c45bbae8c765e10df9d0dd7615473797749b)
+  Thanks [@lukebennett88](https://github.com/lukebennett88)! - Update
+  dependencies
+
+- Updated dependencies
+  [[`6fc8d1b`](https://github.com/brighte-labs/spark-web/commit/6fc8d1bc37e25d0cd622bc37f68a1d92eb5961b5),
+  [`7f93c45`](https://github.com/brighte-labs/spark-web/commit/7f93c45bbae8c765e10df9d0dd7615473797749b)]:
+  - @spark-web/a11y@1.3.2
+  - @spark-web/box@1.0.10
+  - @spark-web/button@1.4.4
+  - @spark-web/divider@1.0.10
+  - @spark-web/inline@1.0.10
+  - @spark-web/stack@1.0.10
+  - @spark-web/text@1.1.2
+  - @spark-web/theme@3.0.7
+  - @spark-web/utils@1.2.3
+
 ## 0.1.3
 
 ### Patch Changes
