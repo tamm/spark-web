@@ -1,5 +1,14 @@
 # @spark-web/ssr
 
+## 1.0.9
+
+### Patch Changes
+
+- [#222](https://github.com/brighte-labs/spark-web/pull/222)
+  [`7f93c45`](https://github.com/brighte-labs/spark-web/commit/7f93c45bbae8c765e10df9d0dd7615473797749b)
+  Thanks [@lukebennett88](https://github.com/lukebennett88)! - Update
+  dependencies
+
 ## 1.0.8
 
 ### Patch Changes

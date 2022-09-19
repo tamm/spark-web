@@ -1,5 +1,29 @@
 # @spark-web/dropzone
 
+## 2.0.8
+
+### Patch Changes
+
+- [#222](https://github.com/brighte-labs/spark-web/pull/222)
+  [`7f93c45`](https://github.com/brighte-labs/spark-web/commit/7f93c45bbae8c765e10df9d0dd7615473797749b)
+  Thanks [@lukebennett88](https://github.com/lukebennett88)! - Update
+  dependencies
+
+- Updated dependencies
+  [[`6fc8d1b`](https://github.com/brighte-labs/spark-web/commit/6fc8d1bc37e25d0cd622bc37f68a1d92eb5961b5),
+  [`7f93c45`](https://github.com/brighte-labs/spark-web/commit/7f93c45bbae8c765e10df9d0dd7615473797749b)]:
+  - @spark-web/a11y@1.3.2
+  - @spark-web/alert@2.2.3
+  - @spark-web/box@1.0.10
+  - @spark-web/button@1.4.4
+  - @spark-web/field@3.0.6
+  - @spark-web/icon@1.2.2
+  - @spark-web/stack@1.0.10
+  - @spark-web/text@1.1.2
+  - @spark-web/text-list@2.0.5
+  - @spark-web/theme@3.0.7
+  - @spark-web/utils@1.2.3
+
 ## 2.0.7
 
 ### Patch Changes

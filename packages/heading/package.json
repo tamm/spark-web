@@ -1,6 +1,6 @@
 {
   "name": "@spark-web/heading",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "license": "MIT",
   "main": "dist/spark-web-heading.cjs.js",
   "module": "dist/spark-web-heading.esm.js",
@@ -10,10 +10,10 @@
   "dependencies": {
     "@babel/runtime": "^7.19.0",
     "@emotion/css": "^11.9.0",
-    "@spark-web/box": "^1.0.9",
-    "@spark-web/text": "^1.1.1",
-    "@spark-web/theme": "^3.0.6",
-    "@spark-web/utils": "^1.2.2"
+    "@spark-web/box": "^1.0.10",
+    "@spark-web/text": "^1.1.2",
+    "@spark-web/theme": "^3.0.7",
+    "@spark-web/utils": "^1.2.3"
   },
   "devDependencies": {
     "@types/react": "^17.0.12",
